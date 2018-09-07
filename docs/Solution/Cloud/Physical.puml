@@ -1,0 +1,30 @@
+@startuml
+
+package "Cloud" #lightblue {
+  interface CLI
+  interface Web
+  interface REST
+  folder bin #ffffff {
+    component cloud as c0
+  }
+
+  folder edgeville as c1 #ffffff {
+    component sails.io
+    component sailsjs
+  }
+
+  folder micro-service #ffffff {
+    component cloud
+  }
+}
+
+CLI -- c0
+c0 --  REST
+
+Web -- sailsjs
+Web -- REST
+REST -- sailsjs
+Web -- sails.io
+REST -- cloud
+
+@enduml

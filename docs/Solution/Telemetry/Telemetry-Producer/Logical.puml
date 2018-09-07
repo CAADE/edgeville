@@ -1,0 +1,24 @@
+@startuml
+
+package "User" #ffffcc {
+
+}
+
+package "Used" #ffffcc {
+
+}
+
+package "Telemetry/Telemetry Producer" #lightblue {
+
+    interface "Telemetry/Telemetry Producer" {
+    }
+
+    CLI ()-- "Telemetry/Telemetry Producer"
+    REST ()-- "Telemetry/Telemetry Producer"
+    Web ()-- "Telemetry/Telemetry Producer"
+}
+
+User --> "Telemetry/Telemetry Producer"
+"Telemetry/Telemetry Producer" --> Used
+
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+Actor "actorName" as A
+
+box "Manage-Security" #lightblue
+participant CLI as CLI
+participant Web as Web
+participant "Edgeville" as S
+A -> CLI : Edgeville-root-maintain()
+CLI -> S : root/maintain()
+A -> Web : root/maintain()
+Web -> S : root/maintain()
+end box
+
+@enduml

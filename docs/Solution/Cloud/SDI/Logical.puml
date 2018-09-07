@@ -1,0 +1,24 @@
+@startuml
+
+package "User" #ffffcc {
+
+}
+
+package "Used" #ffffcc {
+
+}
+
+package "Cloud/SDI" #lightblue {
+
+    interface "Cloud/SDI" {
+    }
+
+    CLI ()-- "Cloud/SDI"
+    REST ()-- "Cloud/SDI"
+    Web ()-- "Cloud/SDI"
+}
+
+User --> "Cloud/SDI"
+"Cloud/SDI" --> Used
+
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+actor User
+
+User -> "Security/Trust Manager": UseCase
+"Security/Trust Manager" -> bin: bin-name()
+bin -> sailsjs: bin/name()
+
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+Actor "actorName" as A
+
+box "Manage-Security" #lightblue
+participant CLI as CLI
+participant Web as Web
+participant "Edgeville" as S
+A -> CLI : Edgeville-state-detect()
+CLI -> S : state/detect()
+A -> Web : state/detect()
+Web -> S : state/detect()
+end box
+
+@enduml

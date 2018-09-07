@@ -1,0 +1,14 @@
+@startuml
+Actor "actorName" as A
+
+box "Manage-Application" #lightblue
+participant CLI as CLI
+participant Web as Web
+participant "Edgeville" as S
+A -> CLI : Edgeville-inferance-deploy()
+CLI -> S : inferance/deploy()
+A -> Web : inferance/deploy()
+Web -> S : inferance/deploy()
+end box
+
+@enduml

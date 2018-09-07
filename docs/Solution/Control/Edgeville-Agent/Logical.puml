@@ -1,0 +1,24 @@
+@startuml
+
+package "User" #ffffcc {
+
+}
+
+package "Used" #ffffcc {
+
+}
+
+package "Control Layer/Edgeville Agent" #lightblue {
+
+    interface "Control Layer/Edgeville Agent" {
+    }
+
+    CLI ()-- "Control Layer/Edgeville Agent"
+    REST ()-- "Control Layer/Edgeville Agent"
+    Web ()-- "Control Layer/Edgeville Agent"
+}
+
+User --> "Control Layer/Edgeville Agent"
+"Control Layer/Edgeville Agent" --> Used
+
+@enduml

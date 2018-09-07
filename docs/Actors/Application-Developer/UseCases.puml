@@ -1,0 +1,25 @@
+@startuml
+
+left to right direction
+
+:Application Developer: as Actor
+
+rectangle "Edgeville" #lightblue {
+    (Manage Applications) as U1
+    (Deploy Application) as U2
+    (Deploy AI Application) as U3
+    (Deploy Application\nAcross Ecosystem) as U4
+    (Deploy Model\nAcross Ecosystem) as U5
+    (Run Analytics On the Edge) as U6
+    (Use SaaS in the Ecosystem) as U7
+}
+
+Actor --> U1
+U1 --> U2
+U1 --> U3
+U1 --> U4
+U1 --> U5
+U1 --> U6
+U1 --> U7
+
+@enduml

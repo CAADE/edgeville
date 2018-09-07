@@ -1,0 +1,24 @@
+@startuml
+
+package "User" #ffffcc {
+
+}
+
+package "Used" #ffffcc {
+
+}
+
+package "Cloud/uSDI" #lightblue {
+
+    interface "Cloud/uSDI" {
+    }
+
+    CLI ()-- "Cloud/uSDI"
+    REST ()-- "Cloud/uSDI"
+    Web ()-- "Cloud/uSDI"
+}
+
+User --> "Cloud/uSDI"
+"Cloud/uSDI" --> Used
+
+@enduml

@@ -1,0 +1,21 @@
+@startuml
+
+left to right direction
+
+actor :Operations Manager: as Actor
+
+rectangle "Cloud" #lightBlue {
+    UseCase UC1 as "Manage Cloud"
+    UseCase UC2 as "Destroy Hybrid Cloud" #lightgreen
+    UseCase UC3 as "Monitor Hybrid Cloud" #lightgreen
+    UseCase UC4 as "Create Hybrid Cloud" #lightgreen
+    UseCase UC5 as "Create topology of uClouds" #lightgreen
+
+    Actor --> UC1
+    UC1 <|-- UC2
+    UC1 <|-- UC3
+    UC1 <|-- UC4
+    UC1 <|-- UC5
+}
+
+@enduml

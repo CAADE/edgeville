@@ -1,0 +1,29 @@
+@startuml
+
+left to right direction
+
+actor :User: <<Person>>
+actor :SubSystem: <<Person>>
+
+
+rectangle "Security" #lightBlue {
+UseCase "Boot Protection" as UC1
+UseCase "Establish Root of Trust" as UC2
+UseCase "Maintain a Root of Trust" as UC3
+UseCase "Create Secure Topology" as UC4
+UseCase "Establish Integrity Network" as UC5
+UseCase "Create Security Policy" as UC6
+UseCase "Filter Data based on Security" as UC7
+UseCase "Encrypt Data" as UC8
+UseCase "Protect the Platform" as UC9
+UseCase "Detect State of the Platform" as UC10
+UseCase "Isolate workloads" as UC11
+
+UC6 --> UC7
+UC2 --> UC3
+
+User --> UC1
+User --> UC2
+}
+
+@enduml

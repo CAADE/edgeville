@@ -1,0 +1,13 @@
+@startuml
+
+left to right direction
+
+:Security Engineer: as Actor
+
+rectangle "Edgeville" #lightblue {
+    (Manage Security) as U1
+}
+
+Actor --> U1
+
+@enduml

@@ -1,0 +1,24 @@
+@startuml
+actor "Operations\nManager" as User
+
+User -> "Control": Create Aggregated Edge Device
+"Control" -> bin: edge-create(type:aggregated)
+bin -> sailsjs: edge/create(type)
+
+User -> "Control": Register Aggregated Edge Device
+"Control" -> bin: edge-register()
+bin -> sailsjs: edge/register()
+
+User -> "Control": Create Edge Device
+"Control" -> bin: edge-create()
+bin -> sailsjs: edge/create()
+
+User -> "Control": Monitor Edge Device
+"Control" -> bin: edge-monitor()
+bin -> sailsjs: edge/monitor()
+
+User -> "Control": Update Edge Device
+"Control" -> bin: edge-update()
+bin -> sailsjs: edge/update()
+
+@enduml

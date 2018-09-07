@@ -1,0 +1,14 @@
+@startuml
+Actor "actorName" as A
+
+box "Manage-Cloud" #lightblue
+participant CLI as CLI
+participant Web as Web
+participant "Edgeville" as S
+A -> CLI : Edgeville-hybrid-monitor()
+CLI -> S : hybrid/monitor()
+A -> Web : hybrid/monitor()
+Web -> S : hybrid/monitor()
+end box
+
+@enduml

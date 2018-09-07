@@ -1,0 +1,6 @@
+@startuml
+actor User
+
+User -> "control": UseCase
+
+@enduml

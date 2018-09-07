@@ -1,0 +1,14 @@
+@startuml
+Actor "actorName" as A
+
+box "Manage-Security" #lightblue
+participant CLI as CLI
+participant Web as Web
+participant "Edgeville" as S
+A -> CLI : Edgeville-security-create()
+CLI -> S : security/create()
+A -> Web : security/create()
+Web -> S : security/create()
+end box
+
+@enduml

@@ -1,0 +1,24 @@
+@startuml
+
+package "User" #ffffcc {
+
+}
+
+package "Used" #ffffcc {
+
+}
+
+package "Security Layer/Identity Manager" #lightblue {
+
+    interface "Security Layer/Identity Manager" {
+    }
+
+    CLI ()-- "Security Layer/Identity Manager"
+    REST ()-- "Security Layer/Identity Manager"
+    Web ()-- "Security Layer/Identity Manager"
+}
+
+User --> "Security Layer/Identity Manager"
+"Security Layer/Identity Manager" --> Used
+
+@enduml

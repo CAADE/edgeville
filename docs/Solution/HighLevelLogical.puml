@@ -1,0 +1,38 @@
+@startuml
+
+package Edgeville #lightblue {
+    package "Cloud Layer" as Cloud #white {
+      rectangle "SDI"
+      rectangle "uSDI"
+      rectangle "Hybrid\nCloud" as HC
+      HC --> "n" SDI
+      HC --> "n" uSDI
+    }
+    package "Control Layer" as Control #white {
+      rectangle "Data\nCoordinator" as DC
+      rectangle "Edgeville Manager" as EM
+      rectangle "Edgeville Agent" as EA
+      EM --> "n" EA
+      EM --> DC
+    }
+    package "Telemetry Layer" as Telemetry #white {
+      rectangle "Telelmetry\nProducer" as TP
+      rectangle "Telelmetry\nBus" as TB
+      rectangle "Telelmetry\nSubscriber" as TS
+      rectangle "Telelmetry\nAggregator" as TA
+      TB -- TP
+      TB -- TS
+      TP <|-- TA
+      TS <|-- TA
+    }
+    package "Security Layer" as Security #white {
+      rectangle "Identity\nManager" as IM
+      rectangle "Trust\nManager" as TM
+      rectangle "Encryption" as SLE
+      rectangle "Detection" as SLD
+    }
+    Control -> Telemetry
+    Control --> Security
+    Cloud --> Control
+}
+@enduml

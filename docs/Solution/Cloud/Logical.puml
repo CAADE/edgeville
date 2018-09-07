@@ -1,0 +1,29 @@
+@startuml
+
+package "Control" #ffffcc {
+
+}
+
+package "Cloud" #lightblue {
+
+    interface "Cloud" {
+    }
+
+    CLI ()-- "Cloud"
+    REST ()-- "Cloud"
+    Web ()-- "Cloud"
+
+    rectangle SDI {
+    }
+    rectangle uSDI {
+    }
+    rectangle "Hybrid\nCloud" as HC {
+    }
+    Cloud *--> HC
+    Cloud o--> SDI
+    Cloud o--> uSDI
+}
+
+"Cloud" --> Control
+
+@enduml

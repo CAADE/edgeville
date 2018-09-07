@@ -1,0 +1,25 @@
+@startuml
+
+package  "Control"  #lightblue {
+  folder bin #ffffff {
+    file control as bc
+  }
+
+  folder Services #ffffff {
+    file control as sc
+  }
+
+  node micro
+
+  node sailsjs
+  database DB1
+
+  sailsjs -- DB1
+  bin .. sailsjs
+  Services .. micro
+
+  micro -- DB1
+  sailsjs -> micro
+}
+
+@enduml

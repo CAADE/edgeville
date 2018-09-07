@@ -1,0 +1,25 @@
+@startuml
+
+package  "Cloud"  #lightblue {
+  folder bin #ffffff {
+    file cloud as cb
+  }
+
+  folder Services #ffffff {
+    file cloud as cs
+  }
+
+  node micro
+
+  node sailsjs
+  database DB
+
+  sailsjs -- DB
+  bin .. sailsjs
+  Services .. micro
+
+  micro -- DB
+  sailsjs -> micro
+}
+
+@enduml

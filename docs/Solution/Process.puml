@@ -1,0 +1,34 @@
+@startuml
+|Edgeville|
+start
+|#lightblue|Edge Device|
+fork
+  :Bring Up;
+  :Initialize Edgeville Agent;
+  :Initialize uSDI;
+  :Brought Up;
+|#lightgreen|Aggregated Edge Device|
+fork again
+  :Bring Up;
+  :Initialize Edgeville Manager;
+  :Initialize uSDI;
+  :Initialize Hybrid Cloud;
+  :Waiting for Children;
+|#orange|Data Center|
+fork again
+  :Bring Up;
+  :Initialize Edgeville Manager;
+  :Initialize SDI;
+  :Initialize Hybrid Cloud;
+  :Waiting for Children;
+fork end
+|Edge Device|
+  :Notify Parent;
+|Aggregated Edge Device|
+  :Children Up;
+  :Brought Up;
+  :Notify Parent;
+|#orange|Data Center|
+  :Children Up;
+  :Ready;
+@enduml

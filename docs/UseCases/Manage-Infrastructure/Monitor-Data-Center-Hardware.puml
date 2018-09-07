@@ -1,0 +1,14 @@
+@startuml
+Actor "actorName" as A
+
+box "Manage-Infrastructure" #lightblue
+participant CLI as CLI
+participant Web as Web
+participant "Edgeville" as S
+A -> CLI : Edgeville-data-monitor()
+CLI -> S : data/monitor()
+A -> Web : data/monitor()
+Web -> S : data/monitor()
+end box
+
+@enduml

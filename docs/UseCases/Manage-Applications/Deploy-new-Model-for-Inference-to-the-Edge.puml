@@ -1,0 +1,14 @@
+@startuml
+Actor "actorName" as A
+
+box "Manage-Application" #lightblue
+participant CLI as CLI
+participant Web as Web
+participant "Edgeville" as S
+A -> CLI : Edgeville-new-deploy()
+CLI -> S : new/deploy()
+A -> Web : new/deploy()
+Web -> S : new/deploy()
+end box
+
+@enduml

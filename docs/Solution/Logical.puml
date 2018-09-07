@@ -1,0 +1,40 @@
+@startuml
+
+skinparam packageStyle rect
+
+package Edgeville {
+    package "Edgeville Agent" as EA #lightblue {
+      package "Telemetry" as TEA {
+      }
+      package "Control" as CEA {
+      }
+      package "Store" as SEA {
+      }
+      CEA --> SEA
+      TEA -> SEA
+    }
+    package "Edgeville Manager" as EM #lightgreen {
+      package "Telemetry Aggregator" as TAEM {
+      }
+      package "Identity Management" as IMEM {
+      }
+      package "Data Coordinator" as DCEM {
+      }
+      package "Federated Control" as FCEM {
+      }
+      package "Trust Manager" as TMEM {
+      }
+      package "Store" as SEM {
+      }
+      FCEM --> TMEM
+      FCEM --> IMEM
+      TAEM -> FCEM
+      DCEM --> SEM
+      IMEM --> SEM
+      TMEM --> SEM
+      FCEM --> DCEM
+    }
+    TEA ---> TAEM
+    FCEM --> CEA
+}
+@enduml

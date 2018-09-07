@@ -1,0 +1,8 @@
+@startuml
+actor User
+
+User -> "Cloud/SDI": UseCase
+"Cloud/SDI" -> bin: bin-name()
+bin -> sailsjs: bin/name()
+
+@enduml

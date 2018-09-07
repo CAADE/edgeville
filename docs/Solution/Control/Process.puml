@@ -1,0 +1,22 @@
+@startuml
+
+partition "Control" {
+
+}
+
+partition "Operations Manager" #cccccc {
+  (*) --> "Create Topology of Control"
+}
+
+partition "Control" #lightblue {
+  "Create Topology of Control" --> "Create Aggregated Edge Device"
+  "Create Topology of Control" --> "Create Edge Device"
+  "Create Edge Device" --> "Register Edge Device"
+  "Register Edge Device" --> "Register Aggregated Edge Device"
+  "Create Aggregated Edge Device" --> "Register Aggregated Edge Device"
+  --> "Monitor Edge Device"
+  --> "Update Edge Device"
+  --> "Monitor Edge Device"
+}
+
+@enduml

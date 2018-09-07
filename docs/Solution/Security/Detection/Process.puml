@@ -1,0 +1,22 @@
+@startuml
+
+partition "Security/Detection" {
+
+}
+
+partition User  #cccccc {
+  (*) --> "Create Project"
+  --> "Write Code"
+}
+
+partition "Security/Detection" #lightblue {
+  "Write Code" --> "Test Code"
+  "Test Code" --> "Deploy Code"
+  "Deploy Code" --> (*)
+}
+
+partition Used #cccccc {
+  "Test Code" --> "Do Something"
+}
+
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+Actor "actorName" as A
+
+box "Manage-Security" #lightblue
+participant CLI as CLI
+participant Web as Web
+participant "Edgeville" as S
+A -> CLI : Edgeville-data-encrypt()
+CLI -> S : data/encrypt()
+A -> Web : data/encrypt()
+Web -> S : data/encrypt()
+end box
+
+@enduml

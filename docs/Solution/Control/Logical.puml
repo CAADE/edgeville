@@ -1,0 +1,23 @@
+@startuml
+
+package "Cloud" #ffffcc {
+
+}
+
+package "Control" as C #lightblue {
+    interface "Control"
+    package "Data Coordinator" as DC  { }
+    package "Edgeville Agent"  as EA { }
+    package "Edgeville Manager" as EM { }
+
+    CLI ()-- "Control"
+    REST ()-- "Control"
+    Web ()-- "Control"
+    "Control" ..> DC
+    "Control" ..> EA
+    "Control" ..> EM
+}
+
+Cloud -> C
+
+@enduml

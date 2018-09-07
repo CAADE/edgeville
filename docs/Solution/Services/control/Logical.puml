@@ -1,0 +1,13 @@
+@startuml
+
+package "control" #lightblue {
+    interface "control" {
+
+    }
+    CLI ()-- "control" : 5000
+    REST ()-- "control" : 3000
+    Web ()-- "control" : 80
+}
+
+
+@enduml

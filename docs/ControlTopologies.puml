@@ -1,0 +1,35 @@
+@startuml
+    rectangle "Data Center 1" as C1 #lightblue
+    rectangle "Data Center 2" as C2 #lightblue
+    rectangle "Data Center 3" as CA #lightblue
+
+    storage "Edge Device 11" as C3
+    storage "Edge Device 12" as C4
+    storage "Edge Device 13" as C5
+    storage "Edge Device 14" as C6
+    storage "Edge Device 25" as C7
+    storage "Edge Device 26" as C8
+    storage "Edge Device 27" as C9
+    storage "Edge Device 28" as C10
+    storage "Aggregated\nEdge Device 31" as CA3 #lightgreen
+    storage "Edge Device 32" as CA4
+    storage "Edge Device 311" as CA5
+    storage "Edge Device 312" as CA6
+
+    C2 -- C1
+    CA -- C1
+    C2 - CA
+    C1 -- C3
+    C1 -- C4
+    C1 -- C5
+    C1 -- C6
+    C7 -- C2
+    C8 -- C2
+    C9 -- C2
+    C10 -- C2
+
+    CA - CA3
+    CA -- CA4
+    CA3 -- CA5
+    CA3 -- CA6
+@enduml

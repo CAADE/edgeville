@@ -1,0 +1,8 @@
+@startuml
+actor User
+
+User -> "Telemetry/Telemetry Aggregator": UseCase
+"Telemetry/Telemetry Aggregator" -> bin: bin-name()
+bin -> sailsjs: bin/name()
+
+@enduml

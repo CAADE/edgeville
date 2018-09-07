@@ -1,0 +1,47 @@
+@startuml
+
+package "Data Center" as DC #lightblue {
+  cloud "Hybrid\nCloud" as HC #white {
+
+  }
+  cloud SDI #white {
+    rectangle "Edgeville Manager" as EM #lightgreen {
+      storage "Identity\nManagement" as IM #white
+      storage "Federated\nOrchestrated\nControl" as FOC #white
+      storage "Data\nCoordinator" as EDC #white
+      storage "Trust\nManager" as TM #white
+      storage "Telemetry\nAggregator" as TA #white
+    }
+    TA -> FOC
+    FOC --> TM
+    FOC --> IM
+    FOC --> EDC
+
+  }
+}
+package "Edge Aggregator Device" as EAD #lightblue {
+  cloud "Hybrid\nCloud" as HC2 #white {
+  }
+  cloud uSDI as uSDI1 #white {
+      storage "Edgeville\nManager" as EM1 #lightgreen {
+      }
+      storage "Edgeville\nAgent" as EA1  #yellow {
+      }
+  }
+}
+package "Edge Device" as ED #lightblue {
+  cloud uSDI as uSDI2 #white {
+      rectangle "Edgeville Agent" as EA2 #yellow {
+        storage "Control" #white
+        storage "Store" #white
+        storage "Telemetry" #white
+      }
+      Control --> Store
+      Telemetry -> Control
+  }
+}
+HC --> SDI
+HC --> uSDI1
+HC2 --> uSDI2
+
+@enduml

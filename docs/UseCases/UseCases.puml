@@ -1,0 +1,25 @@
+@startuml
+
+
+:Application Developer: as Dev
+:Dev Ops: as DevOps
+:Network Manager: as network
+:Operations Manager: as ops
+:Security Engineer: as security
+
+rectangle "Edgeville"  #lightBlue {
+    (Manage Applications) as MA
+    (Manage Cloud) as MC
+    (Manage Infrastructure) as MI
+    (Manage Security) as MS
+}
+
+Dev --> MA
+DevOps --> MA
+network --> MI
+network --> MS
+ops --> MI
+ops --> MC
+security --> MS
+
+@enduml

@@ -1,0 +1,53 @@
+@startuml
+
+rectangle "Data Center" as DC #lightblue {
+  cloud SDI #ffffff
+  cloud "Hybrid\nCloud" as HC #pink
+  node "Edgeville\nManager" as EM #lightgreen
+}
+rectangle Telco  #ffffcc {
+  cloud "Private Cloud" #dddddd
+  cloud "Shared Cloud" as SC #ffffff
+}
+rectangle "Edge Device" as ED1 #lightblue {
+  cloud uSDI #ffffff
+  node "Edgeville\nAgent" as EA1 #lightgreen
+}
+
+rectangle "Aggregated Edge Device" as ED2 #lightblue {
+  cloud "uSDI" as uSDI2 #ffffff
+  cloud "Hybrid\nCloud" as HC2 #pink
+  node "Edgeville\nAgent" as EA2 #lightgreen
+  node "Edgeville\nManager" as EM2 #lightgreen
+}
+
+rectangle "Edge Device" as ED3 #lightblue {
+  cloud "uSDI" as uSDI3 #ffffff
+  node "Edgeville\nAgent" as EA3 #lightgreen
+}
+EM --> EA2
+EM --> EA1
+EM2 --> EA3
+EA2 --> EM2
+rectangle "IOT Gateway" as IG1 #ffffcc
+rectangle "IOT Gateway" as IG2 #ffffcc
+rectangle "Sensor" as D1 #lightgray
+rectangle "Device" as D2 #lightgray
+rectangle "Camera" as D3 #lightgray
+
+rectangle "Device" as D4 #lightgray
+
+IG1 -- D1
+IG1 -- D2
+IG1 -- D3
+ED1 -- IG1
+ED1 -- IG2
+ED3 -- D4
+HC --> SC
+HC --> uSDI2
+HC -> SDI
+HC -> uSDI
+HC2 -> uSDI2
+HC2 --> uSDI3
+
+@enduml

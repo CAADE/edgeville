@@ -1,0 +1,16 @@
+@startuml
+actor "Operations\nManager" as User
+
+User -> "Cloud": Create Hybrid Cloud
+"Cloud" -> bin: hybrid-create()
+bin -> sailsjs: hybrid/create()
+
+User -> "Cloud": Monitor Hybrid Cloud
+"Cloud" -> bin: hybrid-monitor()
+bin -> sailsjs: hybrid/monitor()
+
+User -> "Cloud": Destroy Hybrid Cloud
+"Cloud" -> bin: hybrid-destroy()
+bin -> sailsjs: hybrid/destroy()
+
+@enduml

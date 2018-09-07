@@ -1,0 +1,67 @@
+
+@startuml
+node "Data Center" as DC #lightblue {
+  interface REST as SDIREST
+  cloud SDI #white
+  SDIREST - SDI
+  cloud "Hybrid Cloud" as HC #white
+  rectangle "Edgeville Manager" as EM #white {
+  }
+
+  HC --> SDIREST
+}
+interface "Agent REST" as REA
+interface "uSDI REST" as REST
+node "Edge Device" as ED #lightblue {
+    cloud uSDI #white {
+        component Orchestrator as O
+        component Compute as C
+        component Storage as S
+        component "Network\nuCPE" as N
+    }
+    REST -- O
+    O -- C
+    O -- S
+    O -- N
+    rectangle "Edgeville Agent" #white  {
+      component Trust
+      component Controller
+      component "Telemetry\nProducer" as Telemetry
+      component Store
+    }
+    REA -- Controller
+    Controller -- Trust
+    Controller -- Store
+    Telemetry -- Store
+}
+interface "Telemetry Bus" as TBI
+interface "Agent REST" as REM
+interface "uSDI REST" as RuSDIM
+node "Aggregated Edge Device" as AED #lightblue {
+    cloud "uSDI" as AEuSDI #white
+    rectangle "Edgeville Agent" as AEDEA #white
+    rectangle "Edgeville Manager" as AEDEM #white  {
+        component "Controller" as EMC
+        component "Telemetry\nSubscriber" as TS
+        component "Telemetry\nAggregator" as TA
+        component "Security\nTrust\nManager" as STM
+        component "Security\nIdentity\nManager" as SIM
+    }
+    EMC -- STM
+    TS -> EMC
+    RuSDIM -- AEuSDI
+    REM -- AEDEA
+    AEDEA -> AEDEM
+    EMC --> REA
+    EMC --> SIM
+}
+HC --> RuSDIM
+HC --> REST
+EM --> REA
+EM --> REM
+Telemetry --> TBI
+TBI --> TS
+TS --> TA
+TA --> TBI
+TBI -> EM
+@enduml

@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+
+const fs = require('fs');
+const program =  require('commander');
+const filename = __filename.replace(__dirname,'').substring(1); // Strip the leading slash '/'
+
+program.version('0.0.1')
+
+files = fs.readdirSync(__dirname);
+for(let i in files) {
+  let file = files[i];
+  // Find all of the bin files that match "filename-"
+  if(file.includes(filename + '-') && file.length > filename.length) {
+    let items = file.split(/-/);
+    items.shift();
+    let cfile = items.join('/');
+    // Load the controllers for these files.
+    const action = require('../api/controllers/' + cfile);
+    program.command(items[1] + ' [options]', action.description);
+  }
+}
+program.parse(process.argv);

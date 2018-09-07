@@ -1,0 +1,8 @@
+@startuml
+actor User
+
+User -> "Telemetry/Telemetry Bus": UseCase
+"Telemetry/Telemetry Bus" -> bin: bin-name()
+bin -> sailsjs: bin/name()
+
+@enduml

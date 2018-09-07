@@ -1,0 +1,22 @@
+@startuml
+
+partition "Cloud/SDI" {
+
+}
+
+partition User  #cccccc {
+  (*) --> "Create Project"
+  --> "Write Code"
+}
+
+partition "Cloud/SDI" #lightblue {
+  "Write Code" --> "Test Code"
+  "Test Code" --> "Deploy Code"
+  "Deploy Code" --> (*)
+}
+
+partition Used #cccccc {
+  "Test Code" --> "Do Something"
+}
+
+@enduml

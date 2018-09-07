@@ -1,0 +1,14 @@
+@startuml
+Actor "actorName" as A
+
+box "Manage-Security" #lightblue
+participant CLI as CLI
+participant Web as Web
+participant "Edgeville" as S
+A -> CLI : Edgeville-protection-boot()
+CLI -> S : protection/boot()
+A -> Web : protection/boot()
+Web -> S : protection/boot()
+end box
+
+@enduml

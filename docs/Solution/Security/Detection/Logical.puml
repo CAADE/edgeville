@@ -1,0 +1,24 @@
+@startuml
+
+package "User" #ffffcc {
+
+}
+
+package "Used" #ffffcc {
+
+}
+
+package "Security/Detection" #lightblue {
+
+    interface "Security/Detection" {
+    }
+
+    CLI ()-- "Security/Detection"
+    REST ()-- "Security/Detection"
+    Web ()-- "Security/Detection"
+}
+
+User --> "Security/Detection"
+"Security/Detection" --> Used
+
+@enduml

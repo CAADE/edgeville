@@ -1,0 +1,13 @@
+@startuml
+
+package "edgeville-agent" #lightblue {
+    interface "edgeville-agent" {
+
+    }
+    CLI ()-- "edgeville-agent" : 5000
+    REST ()-- "edgeville-agent" : 3000
+    Web ()-- "edgeville-agent" : 80
+}
+
+
+@enduml

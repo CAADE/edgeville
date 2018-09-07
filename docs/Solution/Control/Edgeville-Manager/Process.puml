@@ -1,0 +1,22 @@
+@startuml
+
+partition "Control Layer/Edgeville Manager" {
+
+}
+
+partition User  #cccccc {
+  (*) --> "Create Project"
+  --> "Write Code"
+}
+
+partition "Control Layer/Edgeville Manager" #lightblue {
+  "Write Code" --> "Test Code"
+  "Test Code" --> "Deploy Code"
+  "Deploy Code" --> (*)
+}
+
+partition Used #cccccc {
+  "Test Code" --> "Do Something"
+}
+
+@enduml

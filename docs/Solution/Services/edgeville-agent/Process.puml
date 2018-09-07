@@ -1,0 +1,20 @@
+@startuml
+
+partition "edgeville-agent" {
+
+}
+
+partition User  #cccccc {
+  (*) --> "Create Project"
+  --> "Write Code"
+}
+
+partition "edgeville-agent" #lightblue {
+  "Write Code" --> "Test Code"
+  "Test Code" --> "Deploy Code"
+  "Deploy Code" --> (*)
+}
+
+partition Used  #cccccc {
+}
+@enduml

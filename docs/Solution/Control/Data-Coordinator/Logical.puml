@@ -1,0 +1,24 @@
+@startuml
+
+package "User" #ffffcc {
+
+}
+
+package "Used" #ffffcc {
+
+}
+
+package "Control Layer/Data Coordinator" #lightblue {
+
+    interface "Control Layer/Data Coordinator" {
+    }
+
+    CLI ()-- "Control Layer/Data Coordinator"
+    REST ()-- "Control Layer/Data Coordinator"
+    Web ()-- "Control Layer/Data Coordinator"
+}
+
+User --> "Control Layer/Data Coordinator"
+"Control Layer/Data Coordinator" --> Used
+
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+
+salt
+{
+  Run Analytics on the Edge
+
+  {
+      parameter1 | "value1"
+      parameter2 | "value2"
+      [ Cancel <&circle-x>] | [ OK <&account-login> ]
+  }
+}
+
+@enduml

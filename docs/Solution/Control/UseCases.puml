@@ -1,0 +1,36 @@
+@startuml
+
+left to right direction
+
+actor :Operations Manager: as User
+
+rectangle "Control" #lightBlue {
+  UseCase UC1 as "Manage\nInfrastructure"
+  UseCase UCA as "Manage\nAggregated\nEdge Device"
+  UseCase UC2 as "Create\nAggregated\nEdge Device" #lightgreen
+  UseCase UC4 as "Register\nAggregated\nEdge Device" #lightgreen
+  UseCase UCB as "Manage\nEdge Device"
+  UseCase UC3 as "Create\nEdge Device" #lightgreen
+  UseCase UC5 as "Register\nEdge Device" #lightgreen
+  UseCase UC7 as "Monitor\nEdge Device" #lightgreen
+  UseCase UCC as "Manage\nData Center\nHardware"
+  UseCase UC8 as "Monitor\nData Center\nHardware" #lightgreen
+  UseCase UC9 as "Update\nData Center\nHardware" #lightgreen
+  UseCase UC0 as "Update\nEdge Device" #lightgreen
+
+  User --> UC1
+  UC1 <|-- UCA
+  UCA --> UC2
+  UCA --> UC4
+  UC1 <|-- UCB
+  UCB --> UC3
+  UCB --> UC5
+  UCB --> UC7
+  UC1 <|-- UCC
+  UCC --> UC8
+  UCC --> UC9
+  UCC --> UC0
+
+}
+
+@enduml

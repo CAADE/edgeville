@@ -1,0 +1,24 @@
+@startuml
+
+package "User" #ffffcc {
+
+}
+
+package "Used" #ffffcc {
+
+}
+
+package "Security/Trust Manager" #lightblue {
+
+    interface "Security/Trust Manager" {
+    }
+
+    CLI ()-- "Security/Trust Manager"
+    REST ()-- "Security/Trust Manager"
+    Web ()-- "Security/Trust Manager"
+}
+
+User --> "Security/Trust Manager"
+"Security/Trust Manager" --> Used
+
+@enduml

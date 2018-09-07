@@ -1,0 +1,24 @@
+@startuml
+
+package "User" #ffffcc {
+
+}
+
+package "Used" #ffffcc {
+
+}
+
+package "Security Layer/Encryption" #lightblue {
+
+    interface "Security Layer/Encryption" {
+    }
+
+    CLI ()-- "Security Layer/Encryption"
+    REST ()-- "Security Layer/Encryption"
+    Web ()-- "Security Layer/Encryption"
+}
+
+User --> "Security Layer/Encryption"
+"Security Layer/Encryption" --> Used
+
+@enduml

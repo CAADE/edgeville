@@ -1,0 +1,14 @@
+@startuml
+Actor "actorName" as A
+
+box "Manage-Applications" #lightblue
+participant CLI as CLI
+participant Web as Web
+participant "Edgeville" as S
+A -> CLI : Edgeville-communication-peer-to-peer()
+CLI -> S : communication/peer-to-peer()
+A -> Web : communication/peer-to-peer()
+Web -> S : communication/peer-to-peer()
+end box
+
+@enduml

@@ -1,9 +1,13 @@
-Generic Solution Overview
-=========================
-The Edgeville conceptual architecture represents an Edge to Cloud distributed computing platform that can scale to millions
+.. _Solution-Salt-Control:
+
+Solution Salt Stack Control
+===========================
+The Edgeville reference architecture represents an Edge to Cloud distributed computing platform that can scale to millions
 of edge devices or nodes. This architecture shows the use cases, and specs for implementing the Edgeville Architecture.
 The architecture is broken up into several different components and sections. The system connects edge devices and data centers
 together across three different aspects: Security, Control, and Cloud Applications.
+
+This Reference Architecture focuses on Salt Stack as the control, Telemtry, and Security Layers of the solution.
 
 High Level Use Cases
 --------------------
@@ -42,22 +46,26 @@ The Edgeville architecture has two aspects: Control and Cloud. The Control layer
 Control Layer
 -------------
 
-The Control layer utilizes the Control, Security, and Telemetry subsystems by laying down the software on an Agent and Manager pattern.
+The Control Layer can be implemented using Salt Stack. The following mappings can be made.
 
-The Edgeville Agent is a lightweight proccess that resides in Edge Devices/Aggregated Edge Devices and controls the infrastructure,
-stores special data (security keys, hints, metrics), and sends telemetry into the Telemetry Bus.
+* :ref:`SubSystem-Control/Edgeville-Manager` is equivlant to Salt Master or Syndicate
+* :ref:`SubSystem-Control/Edgeville-Agent` is equivlant to Salt Minon
+* :ref:`SubSystem-Control/Data-Coordinator` is equivlant to Salt Pillars
+* :ref:`SubSystem-Telemetry` is equivlant to Salt Grains and Salt States.
 
-The Edgeville Manager resides in the Data Centers/Aggregated Edge Devices it a small set of services that has a Telemetry Aggregator,
-Data Coordinator, Trust Manager, Federated Control, Store
+Key management should be done when the salt minon is install on the edge device. Keys should be generated and used for
+the registration process.
 
-.. image:: Logical.png
+.. image:: Salt-Logical.png
 
 Cloud Architecture
 ------------------
 
 The Cloud Layer consists of Hybrid Clouds, SDI, and uSDI SubSystems.
+Salt does not have the SDI layer. But it might be able to be used for the uSDI layer if just basic work needs
+to be done. Still investigating the funcitonality at this time *Sept 8, 2018*
 
-.. image:: LogicalCloud.png
+.. image:: Salt-LogicalCloud.png
 
 * :ref:`SubSystem-Cloud/Hybrid-Cloud` - Hybrid Cloud orchestrates services across multiple clouds. It is responsible application and service orchestration.
 * :ref:`SubSystem-Cloud/SDI` - This is a typical Private Cloud Interface. Responsible for orchesrating Infrastructure in the cloud.
@@ -66,11 +74,12 @@ The Cloud Layer consists of Hybrid Clouds, SDI, and uSDI SubSystems.
 Deployment model
 ----------------
 
-The architecture consists of several micro services that form the application this diagram shows how those
-micro-services are connected together, deployed and storage requirements. The Agent and Manager services have microservices
-that provide the the functional required for the control and cloud functionality of the architecture.
+The architecture consists of deploying Salt Stack on  the system.
+On the Data Center the Salt Master will be installed.
+On the Aggregated Edge Device the Salt Master and Salt Minon will be installed.
+On the Edge Device the Salt Minon will be installed.
 
-.. image:: Deployment.png
+.. image:: Salt-Deployment.png
 
 Physical Architecture
 ---------------------

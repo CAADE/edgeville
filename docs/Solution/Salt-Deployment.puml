@@ -1,0 +1,60 @@
+@startuml
+
+package "Data Center" as DC #lightblue {
+  cloud "Hybrid\nCloud" as HC #white {
+
+  }
+  cloud SDI #white {
+    rectangle "Edgeville Manager" as EM #lightgreen {
+      storage "Identity\nManagement" as IM #white
+      storage "Federated\nOrchestrated\nControl" as FOC #white
+      storage "Data\nCoordinator" as EDC #white
+      storage "Trust\nManager" as TM #white
+      storage "Telemetry\nAggregator" as TA #white
+      storage "Salt Master" as SM #orange
+      storage "Salt Pillar" as SP #orange
+    }
+    EDC <== SP :implements
+    FOC <== SM :implements
+    TA -> FOC
+    FOC --> TM
+    FOC --> IM
+    FOC --> EDC
+
+  }
+}
+package "Edge Aggregator Device" as EAD #lightblue {
+  cloud "Hybrid\nCloud" as HC2 #white {
+  }
+  cloud uSDI as uSDI1 #white {
+      storage "Edgeville\nManager" as EM1 #lightgreen
+      storage "Edgeville\nAgent" as EA1  #yellow
+      storage "Salt Minon" as EADSM #orange
+      storage "Salt Master" as EADSMs #orange
+      EM1 <= EADSMs
+      EA1 <= EADSM
+  }
+}
+package "Edge Device" as ED #lightblue {
+  cloud uSDI as uSDI2 #white {
+      rectangle "Edgeville Agent" as EA2 #yellow {
+        storage "Control" #white
+        storage "Store" #white
+        storage "Telemetry" #white
+        storage "Salt Minon" as EDSM #orange
+        storage "Salt Grain" as EDSG #orange
+        storage "Salt State" as EDSS #orange
+      }
+      Control --> Store
+      Telemetry -> Control
+      Control <= EDSM : implements
+      Store <= EDSG : implements
+      Telemetry <== EDSS : implements
+      Telemetry <= EDSG : implements
+  }
+}
+HC --> SDI
+HC --> uSDI1
+HC2 --> uSDI2
+
+@enduml

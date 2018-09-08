@@ -1,0 +1,46 @@
+@startuml
+package "Hybrid Cloud" as HC #pink {
+  rectangle "Portal" {
+  }
+  database "Registry" {
+  }
+  rectangle "Control" {
+  }
+  rectangle "Orchestrator" {
+  }
+  Portal --> Orchestrator
+  Orchestrator --> Control
+  Orchestrator -> Registry
+  Registry --> Control
+}
+package "SDI" #lightyellow {
+  rectangle "Orchestrator" as OSDI {
+  }
+  rectangle "Storage" as SSDI {
+  }
+  rectangle "Compute" as CSDI {
+  }
+  rectangle "Network" as NSDI {
+  }
+  OSDI --> SSDI
+  OSDI --> CSDI
+  OSDI --> NSDI
+}
+package "uSDI\n<<Salt Syndicate>>" #lightgreen {
+      rectangle "Orchestrator" as OuSDI  {
+      }
+      rectangle "Storage\n<<Salt Grain>>" as SuSDI {
+      }
+      rectangle "Compute\n<<Salt Executor>>" as CuSDI {
+      }
+      rectangle "Network\n<<???>>" as NuSDI #red {
+      }
+      OuSDI --> SuSDI
+      OuSDI --> CuSDI
+      OuSDI --> NuSDI
+}
+
+Control --> OuSDI
+Control --> OSDI
+@enduml
+

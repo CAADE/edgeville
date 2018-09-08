@@ -1,0 +1,40 @@
+@startuml
+
+skinparam packageStyle rect
+
+package Edgeville {
+    package "Edgeville Agent\n<<Salt Minon>>" as EA #lightblue {
+      package "Telemetry\n<<Salt State>>" as TEA {
+      }
+      package "Control\n<<Salt Minon>>" as CEA {
+      }
+      package "Store\n<<Salt Grains>>" as SEA {
+      }
+      CEA --> SEA
+      TEA -> SEA
+    }
+    package "Edgeville Manager" as EM #lightgreen {
+      package "Telemetry Aggregator\n<<???>>" as TAEM #red {
+      }
+      package "Identity Management\n<<???>>" as IMEM #red {
+      }
+      package "Data Coordinator\n<<Salt Pillar>>" as DCEM #white {
+      }
+      package "Federated Control\n<<Salt Master\nSalt Syndicate>>" as FCEM #white {
+      }
+      package "Trust Manager\n<<Intel CIT>>" as TMEM #white {
+      }
+      package "Store\n<<Salt Pillar>>" as SEM #white {
+      }
+      FCEM --> TMEM
+      FCEM --> IMEM
+      TAEM -> FCEM
+      DCEM --> SEM
+      IMEM --> SEM
+      TMEM --> SEM
+      FCEM --> DCEM
+    }
+    TEA ---> TAEM
+    FCEM --> CEA
+}
+@enduml

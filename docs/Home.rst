@@ -38,7 +38,7 @@ High Level Concepts
 * **Shared Cloud** - A Cloud that a teleco can land services for a customer. The Shared cloud is multi-tenent and gives the Teleco the ability monetize their infrastructure.
 * **SDI** - Software Definied Infrastructure. This is the base foundation to a Cloud. This provides a common API to the Cloud layers.
 * **uSDI** - This is an SDI layer for a micro-cloud. the micro-cloud is the smallest possible layer for a cloud. Every Edge Device has a micro-cloud instance in it.
-* **Hybrid Cloud** - This is a true Multi-Hybrid Cloud. It connects multiple clouds together to behave like one cloud. See the `C3 architecture <http://c3.readthedocs.io>`_ for details.
+* **Common Cloud Core** - This is a true Multi-Cloud. It connects multiple clouds together to behave like one cloud. See the `C3 architecture <http://c3.readthedocs.io>`_ for details.
 
 .. image:: HighLevel.png
 
@@ -67,7 +67,7 @@ Logical Architecture
 The Edgeville Architecture contains several subsystems and components. The following is a diagram on
 how these components work together to fulfill the high level use cases.
 
-* :ref:`SubSystem-Cloud` - contains all of the Subsystems for the cloud: :ref:`SubSystem-Cloud/SDI` , :ref:`SubSystem-Cloud/uSDI`, :ref:`SubSystem-Cloud/Hybrid-Cloud` responsible for application and service management.
+* :ref:`SubSystem-Cloud` - contains all of the Subsystems for the cloud: :ref:`SubSystem-Cloud/SDI` , :ref:`SubSystem-Cloud/uSDI`, :ref:`SubSystem-Cloud/Common-Cloud-Core` responsible for application and service management.
 * :ref:`SubSystem-Control` - contains all of the Subsystems for the control of the edge devices: :ref:`SubSystem-Control/Data-Coordinator`, :ref:`SubSystem-Control/Edgeville-Agent`, :ref:`SubSystem-Control/Edgeville-Manager`.
 * :ref:`SubSystem-Security` - contains all of the Subsystems for the security of the edge and data centers: :ref:`SubSystem-Security/Encryption`, :ref:`SubSystem-Security/Identity-Manager`, :ref:`SubSystem-Security/Trust-Manager`
 * :ref:`SubSystem-Telemetry` - contains all of Telemety Bus from multiple clouds, services and application stacks: :ref:`SubSystem-Telemetry/Telemetry-Aggregator`, :ref:`Subsystem-Telemetry/Telemetry-Bus`,  :ref:`Subsystem-Telemetry/Telemetry-Producer`,  :ref:`Subsystem-Telemetry/Telemetry-Subscriber`

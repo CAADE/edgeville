@@ -1,5 +1,5 @@
 @startuml
-package "Hybrid Cloud" as HC #pink {
+package "Common Cloud Core" as HC #pink {
   rectangle "Portal" {
   }
   database "Registry" {

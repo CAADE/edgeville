@@ -1,7 +1,7 @@
 @startuml
-    cloud "Hybrid\nCloud 1" as HC1 #pink
-    cloud "Hybrid\nCloud 2" as HC2 #lightblue
-    cloud "Hybrid\nCloud 2" as HC3 #lavender
+    cloud "Multi\nCloud 1" as HC1 #pink
+    cloud "Multi\nCloud 2" as HC2 #lightblue
+    cloud "Multi\nCloud 2" as HC3 #lavender
 
     rectangle "Data Center 1" as C1 #lightblue
     rectangle "Data Center 2" as C2 #pink

@@ -1,7 +1,7 @@
 @startuml
 
 package "Data Center" as DC #lightblue {
-  cloud "Hybrid\nCloud" as HC #white {
+  cloud "Multi\nCloud" as HC #white {
 
   }
   cloud SDI #white {
@@ -20,7 +20,7 @@ package "Data Center" as DC #lightblue {
   }
 }
 package "Edge Aggregator Device" as EAD #lightblue {
-  cloud "Hybrid\nCloud" as HC2 #white {
+  cloud "Multi\nCloud" as HC2 #white {
   }
   cloud uSDI as uSDI1 #white {
       storage "Edgeville\nManager" as EM1 #lightgreen {

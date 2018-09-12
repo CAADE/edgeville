@@ -1,28 +1,29 @@
 @startuml
 
-package "Control" #ffffcc {
+package "Control" #lightgreen {
 
 }
 
 package "Cloud" #lightblue {
 
-    interface "Cloud" {
+    abstract "Cloud" {
     }
 
-    CLI ()-- "Cloud"
-    REST ()-- "Cloud"
-    Web ()-- "Cloud"
 
-    rectangle SDI {
-    }
-    rectangle uSDI {
-    }
-    rectangle "Hybrid\nCloud" as HC {
-    }
-    Cloud *--> HC
-    Cloud o--> SDI
-    Cloud o--> uSDI
+    class "Private Cloud" as PCloud
+    class "mirco-Cloud" as uCloud
+    class "multi-Cloud" as mCloud
+
+    SDI ()- PCloud
+    uSDI ()- uCloud
+    C3 ()- mCloud
+    Cloud *--> PCloud
+    Cloud o--> uCloud
+    Cloud o--> mCloud
 }
+CLI ()-- "Cloud"
+REST ()-- "Cloud"
+Web ()-- "Cloud"
 
 "Cloud" --> Control
 

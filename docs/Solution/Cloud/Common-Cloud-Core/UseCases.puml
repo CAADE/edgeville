@@ -1,0 +1,34 @@
+@startuml
+
+left to right direction
+
+:Application Developer: as Dev
+:Stack Developer: as SDev
+:Operations Engineer: as Ops
+:micro-Clouds: as uCloud
+:Cloud: as PCloud
+:Clouds: as Clouds
+:multi-Cloud: as mCloud
+
+rectangle "Cloud/Common Cloud Core" #lightBlue {
+    Dev --> (Create Application)
+    Dev --> (Run Application)
+    Dev --> (Deploy Application)
+    SDev --> (Manage Application Stack)
+    SDev --> (Manage Service Template)
+    SDev --> (Test Application Stack)
+    Ops --> (Manage Infrastructure)
+    Ops --> (Create Policies)
+    Ops --> (Create Environments)
+
+    (Run Application) --> Clouds
+    (Deploy Application) --> Clouds
+    (Manage Infrastructure) --> Clouds
+    (Test Application Stack) --> Clouds
+}
+
+Clouds <|-- uCloud
+Clouds <|-- mCloud
+Clouds <|-- PCloud
+
+@enduml

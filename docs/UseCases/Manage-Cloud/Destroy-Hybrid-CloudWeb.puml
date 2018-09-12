@@ -2,7 +2,7 @@
 
 salt
 {
-  Destroy Hybrid Cloud
+  Destroy Multi Cloud
   {
       parameter1 | "value1"
       parameter2 | "value2"

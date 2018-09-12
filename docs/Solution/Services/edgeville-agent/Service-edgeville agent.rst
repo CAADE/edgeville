@@ -56,7 +56,7 @@ The ports exposed are 5000 for external and 3000 for internal.
 Physical Architecture
 ---------------------
 
-The micro-services are physically deployed on to a hybrid cloud infrastructure.
+The micro-services are physically deployed on to a multi cloud infrastructure.
 
 .. image:: Physical.png
 

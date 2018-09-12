@@ -5,10 +5,10 @@ box "Manage-Cloud" #lightblue
 participant CLI as CLI
 participant Web as Web
 participant "Edgeville" as S
-A -> CLI : Edgeville-hybrid-destroy()
-CLI -> S : hybrid/destroy()
-A -> Web : hybrid/destroy()
-Web -> S : hybrid/destroy()
+A -> CLI : Edgeville-multi-destroy()
+CLI -> S : multi/destroy()
+A -> Web : multi/destroy()
+Web -> S : multi/destroy()
 end box
 
 @enduml

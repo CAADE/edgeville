@@ -2,7 +2,7 @@
 
 rectangle "Data Center" as DC #lightblue {
   cloud SDI #ffffff
-  cloud "Hybrid\nCloud" as HC #pink
+  cloud "Multi\nCloud" as HC #pink
   node "Edgeville\nManager" as EM #lightgreen
 }
 rectangle Telco  #ffffcc {
@@ -16,7 +16,7 @@ rectangle "Edge Device" as ED1 #lightblue {
 
 rectangle "Aggregated Edge Device" as ED2 #lightblue {
   cloud "uSDI" as uSDI2 #ffffff
-  cloud "Hybrid\nCloud" as HC2 #pink
+  cloud "Multi\nCloud" as HC2 #pink
   node "Edgeville\nAgent" as EA2 #lightgreen
   node "Edgeville\nManager" as EM2 #lightgreen
 }

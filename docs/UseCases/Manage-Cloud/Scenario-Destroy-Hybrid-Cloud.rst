@@ -1,33 +1,33 @@
-.. _Scenario-Destroy-Hybrid-Cloud:
+.. _Scenario-Destroy-Common-Cloud-Core:
 
-Destroy Hybrid Cloud
+Destroy Multi Cloud
 ====================
 
-Destroy Hybrid Cloud using CLI and Web Interface with ... <parameters>
+Destroy Multi Cloud using CLI and Web Interface with ... <parameters>
 
-.. image:: Destroy-Hybrid-Cloud.png
+.. image:: Destroy-Common-Cloud-Core.png
 
 
 **CLI**
 
-This is the command line interface for the Destroy Hybrid Cloud Scenario.
+This is the command line interface for the Destroy Multi Cloud Scenario.
 
 .. code-block:: none
 
-  # Edgeville hybrid destroy <parameters>
-  # Edgeville hybrid destroy exmaple
+  # Edgeville multi destroy <parameters>
+  # Edgeville multi destroy exmaple
 
 **Web Interface**
 
-This is a mock up of the Web Interface for the Destroy Hybrid Cloud Scenario.
+This is a mock up of the Web Interface for the Destroy Multi Cloud Scenario.
 
-.. image:: Destroy-Hybrid-CloudWeb.png
+.. image:: Destroy-Common-Cloud-CoreWeb.png
 
 **REST**
 
 This is the RESTful interface for the scenario.
 
-*hybrid/destroy*
+*multi/destroy*
 
 ============  ========  ===================
 Name          Value     Description

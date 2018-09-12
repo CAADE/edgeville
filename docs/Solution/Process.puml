@@ -12,14 +12,14 @@ fork again
   :Bring Up;
   :Initialize Edgeville Manager;
   :Initialize uSDI;
-  :Initialize Hybrid Cloud;
+  :Initialize Multi Cloud;
   :Waiting for Children;
 |#orange|Data Center|
 fork again
   :Bring Up;
   :Initialize Edgeville Manager;
   :Initialize SDI;
-  :Initialize Hybrid Cloud;
+  :Initialize Multi Cloud;
   :Waiting for Children;
 fork end
 |Edge Device|

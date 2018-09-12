@@ -30,14 +30,14 @@ High Level Architecture
 The Edgeville Architecture contains several subsystems and components. The following is a diagram on
 how these components work together to fulfill the high level use cases.
 
-* :ref:`SubSystem-Cloud` - contains all of the Subsystems for the cloud: :ref:`SubSystem-Cloud/SDI` , :ref:`SubSystem-Cloud/uSDI`, :ref:`SubSystem-Cloud/Hybrid-Cloud` responsible for application and service management.
+* :ref:`SubSystem-Cloud` - contains all of the Subsystems for the cloud: :ref:`SubSystem-Cloud/SDI` , :ref:`SubSystem-Cloud/uSDI`, :ref:`SubSystem-Cloud/Common-Cloud-Core` responsible for application and service management.
 * :ref:`SubSystem-Control` - contains all of the Subsystems for the control of the edge devices: :ref:`SubSystem-Control/Data-Coordinator`, :ref:`SubSystem-Control/Edgeville-Agent`, :ref:`SubSystem-Control/Edgeville-Manager`.
 * :ref:`SubSystem-Security` - contains all of the Subsystems for the security of the edge and data centers: :ref:`SubSystem-Security/Encryption`, :ref:`SubSystem-Security/Identity-Manager`, :ref:`SubSystem-Security/Trust-Manager`
 * :ref:`SubSystem-Telemetry` - contains all of Telemety Bus from multiple clouds, services and application stacks: :ref:`SubSystem-Telemetry/Telemetry-Aggregator`, :ref:`Subsystem-Telemetry/Telemetry-Bus`,  :ref:`Subsystem-Telemetry/Telemetry-Producer`,  :ref:`Subsystem-Telemetry/Telemetry-Subscriber`
 
 .. image:: HighLevelLogical.png
 
-The Edgeville architecture has two aspects: Control and Cloud. The Control layer contains the Control, Security, and Telemetry. The Cloud layer contains Hybrid Cloud, SDI and uSDI.
+The Edgeville architecture has two aspects: Control and Cloud. The Control layer contains the Control, Security, and Telemetry. The Cloud layer contains Common Cloud Core, SDI and uSDI.
 
 Control Layer
 -------------
@@ -55,11 +55,11 @@ Data Coordinator, Trust Manager, Federated Control, Store
 Cloud Architecture
 ------------------
 
-The Cloud Layer consists of Hybrid Clouds, SDI, and uSDI SubSystems.
+The Cloud Layer consists of Common Cloud Cores, SDI, and uSDI SubSystems.
 
 .. image:: LogicalCloud.png
 
-* :ref:`SubSystem-Cloud/Hybrid-Cloud` - Hybrid Cloud orchestrates services across multiple clouds. It is responsible application and service orchestration.
+* :ref:`SubSystem-Cloud/Common-Cloud-Core` - Common Cloud Core orchestrates services across multiple clouds. It is responsible application and service orchestration.
 * :ref:`SubSystem-Cloud/SDI` - This is a typical Private Cloud Interface. Responsible for orchesrating Infrastructure in the cloud.
 * :ref:`SubSystem-Cloud/uSDI` - This is a micro-cloud interface. Responsible for orchestrating infrastructure in the micro-cloud.
 

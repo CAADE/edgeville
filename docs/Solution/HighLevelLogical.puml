@@ -4,7 +4,7 @@ package Edgeville #lightblue {
     package "Cloud Layer" as Cloud #white {
       rectangle "SDI"
       rectangle "uSDI"
-      rectangle "Hybrid\nCloud" as HC
+      rectangle "Multi\nCloud" as HC
       HC --> "n" SDI
       HC --> "n" uSDI
     }

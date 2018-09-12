@@ -5,7 +5,7 @@ partition "Cloud" {
 }
 
 partition "Operations Manager" #cccccc {
-  (*) --> "Create Hybrid Cloud"
+  (*) --> "Create Common Cloud Core"
 }
 
 partition "Cloud" #lightblue {
@@ -19,8 +19,8 @@ partition "Cloud" #lightblue {
   --> "Layout Cloud Topology"
   "Layout Cloud Topology" --> "Register SDI"
   "Layout Cloud Topology" --> "Register uSDI"
-  "Register SDI" --> "Hybrid Cloud Ready"
-  "Register uSDI" --> "Hybrid Cloud Ready"
+  "Register SDI" --> "Common Cloud Core Ready"
+  "Register uSDI" --> "Common Cloud Core Ready"
   --> "Monitor Cloud"
   --> "Destroy Cloud"
   --> (*)

@@ -1,16 +1,16 @@
 @startuml
 actor "Operations\nManager" as User
 
-User -> "Cloud": Create Hybrid Cloud
-"Cloud" -> bin: hybrid-create()
-bin -> sailsjs: hybrid/create()
+User -> "Cloud": Create Common Cloud Core
+"Cloud" -> bin: multi-create()
+bin -> sailsjs: multi/create()
 
-User -> "Cloud": Monitor Hybrid Cloud
-"Cloud" -> bin: hybrid-monitor()
-bin -> sailsjs: hybrid/monitor()
+User -> "Cloud": Monitor Multi Cloud
+"Cloud" -> bin: multi-monitor()
+bin -> sailsjs: multi/monitor()
 
-User -> "Cloud": Destroy Hybrid Cloud
-"Cloud" -> bin: hybrid-destroy()
-bin -> sailsjs: hybrid/destroy()
+User -> "Cloud": Destroy Multi Cloud
+"Cloud" -> bin: multi-destroy()
+bin -> sailsjs: multi/destroy()
 
 @enduml

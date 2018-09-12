@@ -70,7 +70,7 @@ micro-services.
 Physical Architecture
 ---------------------
 
-The Analytics subsystem is is physically laid out on a hybrid cloud infrastructure. Each microservice is shown
+The Analytics subsystem is is physically laid out on a multi cloud infrastructure. Each microservice is shown
 how they connect to each other. All of the micro-services communicate to each other and the main app through a
 REST interface. A CLI, REST or Web interface for the app is how other subsystems or actors interact. Requests are
 forwarded to micro-services through the REST interface of each micro-service.

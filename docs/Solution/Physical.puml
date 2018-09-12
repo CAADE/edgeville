@@ -4,7 +4,7 @@ node "Data Center" as DC #lightblue {
   interface REST as SDIREST
   cloud SDI #white
   SDIREST - SDI
-  cloud "Hybrid Cloud" as HC #white
+  cloud "Multi Cloud" as HC #white
   rectangle "Edgeville Manager" as EM #white {
   }
 

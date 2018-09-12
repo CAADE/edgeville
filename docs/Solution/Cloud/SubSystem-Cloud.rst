@@ -4,17 +4,17 @@ Cloud
 =====
 
 Cloud is a layer of Edgeville Architecture. This layer contains all of the cloud subsystems including
-:ref:`SubSystem-Cloud/Hybrid-Cloud`, :ref:`SubSystem-Cloud/SDI` and :ref:`SubSystem-Cloud/usDI` subsystems.
-The Cloud layer gives the ability to create several hybrid clouds by combiuning SDI and uSDI subsystems together
+:ref:`SubSystem-Cloud/Common-Cloud-Core`, :ref:`SubSystem-Cloud/SDI` and :ref:`SubSystem-Cloud/usDI` subsystems.
+The Cloud layer gives the ability to create several multi clouds by combiuning SDI and uSDI subsystems together
 in a dynamic manner. Different Cloud layouts (topologies) are used for different applications and workloads.
 
 Use Cases
 ---------
 
 * :ref:`UseCase-Manage-Cloud`
-* :ref:`Scenario-Create-Hybrid-Cloud`
-* :ref:`Scenario-Destroy-Hybrid-Cloud`
-* :ref:`Scenario-Monitor-Hybrid-Cloud`
+* :ref:`Scenario-Create-Common-Cloud-Core`
+* :ref:`Scenario-Destroy-Common-Cloud-Core`
+* :ref:`Scenario-Monitor-Common-Cloud-Core`
 * :ref:`Scenario-Create-topology-of-uClouds`
 
 .. image:: UseCases.png
@@ -43,7 +43,7 @@ Logical Artifacts
 
 The Logical Artifacts of the Cloud layer are the different kinds of Clouds.
 
-* :ref:`SubSystem-Hybrid-Cloud`
+* :ref:`SubSystem-Common-Cloud-Core`
 * :ref:`SubSystem-SDI`
 * :ref:`SubSystem-uSDI`
 
@@ -70,7 +70,7 @@ micro-services.
 Physical Architecture
 ---------------------
 
-The Cloud subsystem is is physically laid out on a hybrid cloud infrastructure. Each microservice is shown
+The Cloud subsystem is is physically laid out on a multi cloud infrastructure. Each microservice is shown
 how they connect to each other. All of the micro-services communicate to each other and the main app through a
 REST interface. A CLI, REST or Web interface for the app is how other subsystems or actors interact. Requests are
 forwarded to micro-services through the REST interface of each micro-service.

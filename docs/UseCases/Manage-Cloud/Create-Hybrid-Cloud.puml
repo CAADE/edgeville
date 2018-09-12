@@ -5,10 +5,10 @@ box "Manage-Cloud" #lightblue
 participant CLI as CLI
 participant Web as Web
 participant "Edgeville" as S
-A -> CLI : Edgeville-hybrid-create()
-CLI -> S : hybrid/create()
-A -> Web : hybrid/create()
-Web -> S : hybrid/create()
+A -> CLI : Edgeville-multi-create()
+CLI -> S : multi/create()
+A -> Web : multi/create()
+Web -> S : multi/create()
 end box
 
 @enduml

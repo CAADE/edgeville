@@ -1,33 +1,33 @@
-.. _Scenario-Create-Hybrid-Cloud:
+.. _Scenario-Create-Common-Cloud-Core:
 
-Create Hybrid Cloud
+Create Multi Cloud
 ===================
 
-Create Hybrid Cloud using CLI and Web Interface with ... <parameters>
+Create Multi Cloud using CLI and Web Interface with ... <parameters>
 
-.. image:: Create-Hybrid-Cloud.png
+.. image:: Create-Common-Cloud-Core.png
 
 
 **CLI**
 
-This is the command line interface for the Create Hybrid Cloud Scenario.
+This is the command line interface for the Create Multi Cloud Scenario.
 
 .. code-block:: none
 
-  # Edgeville hybrid create <parameters>
-  # Edgeville hybrid create exmaple
+  # Edgeville multi create <parameters>
+  # Edgeville multi create exmaple
 
 **Web Interface**
 
-This is a mock up of the Web Interface for the Create Hybrid Cloud Scenario.
+This is a mock up of the Web Interface for the Create Multi Cloud Scenario.
 
-.. image:: Create-Hybrid-CloudWeb.png
+.. image:: Create-Common-Cloud-CoreWeb.png
 
 **REST**
 
 This is the RESTful interface for the scenario.
 
-*hybrid/create*
+*multi/create*
 
 ============  ========  ===================
 Name          Value     Description

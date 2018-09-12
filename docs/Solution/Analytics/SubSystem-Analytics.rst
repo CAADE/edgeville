@@ -3,19 +3,30 @@
 Analytics
 =========
 
-Analytics is a subsystem of Edgeville ...
+Analytics is a layer of the Edgeville Architecture. It shows how the Cloud and Control layer work together
+to provide Analytics and AI on Edge Devices that have the appropriate compute, network and storage capabilities.
+There are several different combinations of where analytics can run in these scenarios. We will cover
+the general scenaros and not all of the permutations.
+
 
 Use Cases
 ---------
 
-*
+* Analyze Data From Edge
+* Analyze Data In Edge
+* Collect Data
+* Perform Action
+* Perform Action In Edge
+* Generate Report
+* Define Analytics Application
 
 .. image:: UseCases.png
 
 Users
 -----
 
-* :ref:`Actor-User`
+* :ref:`Actor-Application-Developer`
+* :ref:`SubSystem-Control`
 
 .. image:: UserInteraction.png
 

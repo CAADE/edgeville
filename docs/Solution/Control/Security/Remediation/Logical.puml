@@ -1,0 +1,24 @@
+@startuml
+
+package "User" #ffffcc {
+
+}
+
+package "Used" #ffffcc {
+
+}
+
+package "Security/Remediation" #lightblue {
+
+    interface "Security/Remediation" {
+    }
+
+    CLI ()-- "Security/Remediation"
+    REST ()-- "Security/Remediation"
+    Web ()-- "Security/Remediation"
+}
+
+User --> "Security/Remediation"
+"Security/Remediation" --> Used
+
+@enduml

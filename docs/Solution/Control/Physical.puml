@@ -6,19 +6,27 @@ package "Control" #lightblue {
   interface REST
   folder bin #ffffff {
     component control as bc
+    component "edgeville-agent" as bea
+    component "edgeville-manager" as bem
   }
 
-  folder appName #ffffff {
+  folder app #ffffff {
     component sails.io
     component sailsjs
   }
 
-  folder uService1 #ffffff {
+  folder uService #ffffff {
     component control as sc
+    component "edgeville-agent" as sea
+    component "edgeville-manager" as sem
   }
 }
 
 CLI -- bc
+CLI -- bea
+CLI -- bem
+bea --  REST
+bem --  REST
 bc --  REST
 
 Web -- sailsjs
@@ -26,5 +34,7 @@ Web -- REST
 REST -- sailsjs
 Web -- sails.io
 REST -- sc
+REST -- sea
+REST -- sem
 
 @enduml

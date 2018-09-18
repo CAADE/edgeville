@@ -3,19 +3,38 @@
 left to right direction
 
 actor :Operations Manager: as Actor
+actor :Control: as Control
 
 rectangle "Cloud" #lightBlue {
     UseCase UC1 as "Manage Cloud"
     UseCase UC2 as "Destroy Multi Cloud" #lightgreen
     UseCase UC3 as "Monitor Multi Cloud" #lightgreen
     UseCase UC4 as "Create Multi Cloud" #lightgreen
-    UseCase UC5 as "Create topology of uClouds" #lightgreen
+    UseCase UC5 as "Create topology of Clouds" #lightgreen
+    UseCase UCA1 as "Create Cloud" #plum
+    UseCase UCA2 as "Register Cloud" #plum
+    UseCase UCA3 as "Monitor Cloud" #plum
+    UseCase UCA4 as "Update Cloud" #plum
+    UseCase UCA5 as "Destroy Cloud" #plum
+    UseCase UCA6 as "DeRegister Cloud" #plum
 
     Actor --> UC1
     UC1 <|-- UC2
     UC1 <|-- UC3
     UC1 <|-- UC4
     UC1 <|-- UC5
+    UC2 --> UCA6
+    UC2 --> UCA5
+    UC1 <|-- UCA1
+
+    UCA5 --> Control
+    UCA1 --> Control
+    UC4 --> UCA2
+    UC3 --> UCA3
+    UC5 --> UCA3
+    UC1 <|-- UCA4
+    UCA4 --> Control
+    UC3 --> Control
 }
 
 @enduml

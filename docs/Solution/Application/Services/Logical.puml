@@ -1,0 +1,40 @@
+@startuml
+
+hide member
+
+package "Analytics" #lightgreen {
+
+}
+package "Workloads" #lightgreen {
+
+}
+package "Cloud" #lightgreen {
+
+}
+rectangle "Application\nDeveloper" {
+}
+
+package "Application/Services" #lightblue {
+
+    interface "Application/Services" {
+    }
+
+    CLI ()-- "Application/Services"
+    REST ()-- "Application/Services"
+    Web ()-- "Application/Services"
+    abstract "Application" as A
+    abstract "Complex Service" as CS
+    abstract "Service" as S
+    abstract "Model" as M
+
+    A "1" o--> "n" S
+    CS "1" o--> "n" S
+    S <|-- CS
+}
+
+"Application\nDeveloper" --> "Application/Services"
+"Workloads" --> "Application/Services"
+"Application/Services" <- "Analytics"
+"Application/Services" --> "Cloud"
+
+@enduml

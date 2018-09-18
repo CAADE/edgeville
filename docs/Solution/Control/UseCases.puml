@@ -3,6 +3,7 @@
 left to right direction
 
 actor :Operations Manager: as User
+actor :Physical: as Physical
 
 rectangle "Control" #lightBlue {
   UseCase UC1 as "Manage\nInfrastructure"
@@ -31,6 +32,15 @@ rectangle "Control" #lightBlue {
   UCC --> UC9
   UCC --> UC0
 
+  UC0 --> Physical
+  UC9 --> Physical
+  UC8 --> Physical
+  UC7 --> Physical
+  UC5 --> Physical
+  UC3 --> Physical
+  UC2 --> Physical
+  UC4 --> Physical
 }
+
 
 @enduml

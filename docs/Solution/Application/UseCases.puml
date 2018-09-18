@@ -1,0 +1,49 @@
+@startuml
+
+left to right direction
+
+actor :Application\nDeveloper: as User
+actor :Cloud\nLayer: as Cloud <<SubSystem>>
+
+
+rectangle "Application Layer" #lightBlue {
+UseCase UC1 as "Manage\nApplications" #plum
+UseCase UC2 as "Deploy\nApplication" #plum
+UseCase UC3 as "Deploy\nService" #lightgreen
+UseCase UC7 as "Deploy\nModel" #pink
+UseCase UC4 as "Update\nApplication" #plum
+UseCase UC5 as "Update\nModel" #pink
+UseCase UC6 as "Update\nService" #lightgreen
+UseCase UC10 as "Manage\nWorkload" #lightyellow
+UseCase UC11 as "Update\nWorkload" #lightyellow
+UseCase UC12 as "Deploy\nWorkload" #lightyellow
+UseCase UC8 as "Monitor\nService" #lightgreen
+UseCase UC9 as "Monitor\nApplication" #plum
+UseCase UC13 as "Monitor\nWorkload" #lightyellow
+
+
+User --> UC1
+User --> UC10
+UC2 --> UC9
+UC1 --> UC4
+UC12 --> UC13
+UC13 --> UC9
+UC9 --> UC8
+UC10 --> UC1
+UC10 -> UC11
+UC10 -> UC12
+UC12 -> UC2
+UC11 -> UC4
+UC2 --> UC7
+UC1 --> UC2
+UC2 --> UC3
+UC4 --> UC6
+UC4 --> UC5
+UC3 --> Cloud
+UC5 --> Cloud
+UC6 --> Cloud
+UC7 --> Cloud
+UC8 --> Cloud
+}
+
+@enduml

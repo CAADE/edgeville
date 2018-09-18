@@ -1,0 +1,79 @@
+@startuml
+
+package "Customer 1" as C1 #lightblue {
+  rectangle "Data Center 1" as DC1 #white {
+    cloud "Multi-Common Cloud Core" as HC #orange {
+      rectangle "Service\nOrchestrator" #white
+      rectangle "Controller" #white
+    }
+    cloud "SDI" as C1C #yellow {
+    }
+  }
+  rectangle "Data Center 2" as DC2 #white {
+    cloud "SDI" as C2C #yellow {
+    }
+  }
+}
+
+package "Teleco" as Teleco #aaffaa {
+  rectangle "Teleco DC" as TDC #white {
+      cloud "Shared Cloud\nSDI" as SC #yellow {
+      }
+      cloud "Private Cloud\nSDI" as PC #lightgray {
+      }
+  }
+  rectangle "NGCO" as NGCO #white {
+    cloud "Private Cloud\nSDI" as NPC #lightgray {
+    }
+  }
+  rectangle "Base Station" as BS #white {
+    cloud "Private Cloud\nSDI" as BPC #lightgray {
+    }
+  }
+}
+
+package "Customer 1 Edge" as C1E #lightblue {
+  rectangle "Edge Device" as Edge #white {
+    cloud "uSDI" as EC #yellow {
+        package "uCPE\nSDN\nEnterprise NFV" as uCPE #white {
+        }
+        package "SDC" as Compute #white {
+        }
+        database "SDS" as Storage #white {
+        }
+    }
+  }
+  rectangle "Edge Device" as Edge2 #white {
+    cloud "uSDI" as uCPE2 #yellow {
+    }
+  }
+}
+
+package IOTGateway #lavender {
+    storage "IOT Device" as IOTD {
+    }
+    storage "IOT Device" as IOTD2 {
+    }
+}
+
+storage "IOT Device"  as ID3
+
+IOTGateway  "n" <--> "1" uCPE : wired
+IOTGateway  "n" <--> "1" uCPE : wireless
+
+ID3 "n" <--> "1" uCPE
+
+HC .> C1C
+HC ..> C2C
+HC ..> SC
+HC ..> EC
+HC ..> uCPE2
+
+Edge ==> BS
+Edge2 ==> BS
+BS ==> NGCO
+NGCO ==> TDC
+TDC ==> DC1
+
+@enduml
+

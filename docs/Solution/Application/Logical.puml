@@ -1,0 +1,32 @@
+@startuml
+
+hide member
+
+package "Application" #lightblue {
+
+    interface "Application" {
+    }
+
+    CLI ()-- "Application"
+    REST ()-- "Application"
+    Web ()-- "Application"
+    package "Workloads" as W {
+    }
+    package Services as S {
+    }
+    package Analytics as A {
+    }
+    W "1" o--> "n" S
+    A "1" o--> "n" S
+    A "1" *--> "n" W
+}
+
+rectangle "Application\nDeveloper" as Dev #lightgray {
+}
+package "Cloud" as Cloud #lightgreen {
+}
+
+Dev --> "Application"
+"Application" -> "Cloud"
+
+@enduml

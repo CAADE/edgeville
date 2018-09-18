@@ -1,0 +1,20 @@
+@startuml
+
+[*] --> BUE
+
+state "Bring Up the Edge" as BUE #lightgray {
+  state "Bring Up Individual Device" as BUID #lightgreen {
+    Secure_Supply_Chain --> Zero_Touch_Provisioning
+    Zero_Touch_Provisioning --> Initial_Load
+    Initial_Load --> OS_and_Application_Launch
+    OS_and_Application_Launch --> Security_Patch_Upgrades
+  }
+  state "Secure Trusted Aggreated Cluster" as STAC  #lightblue {
+    Root_of_Trust --> Chain_of_Trust
+    Chain_of_Trust --> Mutual_Attestation
+    Mutual_Attestation --> Security_Policies
+    Security_Policies --> Integrate_with_Parent
+  }
+}
+
+@enduml

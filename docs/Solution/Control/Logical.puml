@@ -4,20 +4,37 @@ package "Cloud" #ffffcc {
 
 }
 
-package "Control" as C #lightblue {
+package "Physical" #ffffcc {
+
+}
+
+package "Control" as C #lightgray {
     interface "Control"
-    package "Data Coordinator" as DC  { }
-    package "Edgeville Agent"  as EA { }
+    package "Edgeville Agent" as EA { }
     package "Edgeville Manager" as EM { }
+    package "Data Coordinator" as DC #lightblue { }
+    package "Security" as S  #lightgreen {
+
+    }
+    package "Telemetry" as T #plum {
+    }
+
+    EM --> S
+    EA --> S
+    EM --> DC
+    EA --> DC
+    EM --> T
+    EA --> T
 
     CLI ()-- "Control"
     REST ()-- "Control"
     Web ()-- "Control"
-    "Control" ..> DC
-    "Control" ..> EA
-    "Control" ..> EM
+    "Control" --> EA : implemented by
+    "Control" ..> EM : implemented by
 }
 
 Cloud -> C
+
+C --> Physical
 
 @enduml

@@ -1,0 +1,13 @@
+@startuml
+
+package "app" #lightblue {
+    interface "app" {
+
+    }
+    CLI ()-- "app" : 5000
+    REST ()-- "app" : 3000
+    Web ()-- "app" : 80
+}
+
+
+@enduml

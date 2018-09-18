@@ -2,7 +2,6 @@
 
 skinparam packageStyle rect
 
-package Edgeville {
     package "Edgeville Agent" as EA #lightblue {
       package "Telemetry" as TEA {
       }
@@ -36,5 +35,4 @@ package Edgeville {
     }
     TEA ---> TAEM
     FCEM --> CEA
-}
 @enduml

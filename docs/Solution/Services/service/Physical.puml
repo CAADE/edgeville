@@ -1,0 +1,11 @@
+@startuml
+
+interface external
+
+package "service" #lightblue {
+    component service as uS
+    interface internal
+}
+external -- uS : 3000
+internal - uS : 5000
+@enduml

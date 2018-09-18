@@ -12,7 +12,7 @@ partition "Cloud" #lightblue {
   --> "Find Edge Devices"
 }
 
-partition Contol #cccccc {
+partition Contol #lightgreen {
   -> "Return Edge Devices"
 }
 partition "Cloud" #lightblue {

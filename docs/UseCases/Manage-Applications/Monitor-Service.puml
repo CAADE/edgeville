@@ -1,0 +1,14 @@
+@startuml
+Actor "actorName" as A
+
+box "Manage-Applications" #lightblue
+participant CLI as CLI
+participant Web as Web
+participant "Edgeville" as S
+A -> CLI : Edgeville-service-monitor()
+CLI -> S : service/monitor()
+A -> Web : service/monitor()
+Web -> S : service/monitor()
+end box
+
+@enduml

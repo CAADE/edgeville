@@ -3,10 +3,14 @@
 package  "Control"  #lightblue {
   folder bin #ffffff {
     file control as bc
+    file "edgeville-agent" as bea
+    file "edgeville-manager" as bem
   }
 
   folder Services #ffffff {
     file control as sc
+    file "edgeville-agent" as sea
+    file "edgeville-manager" as sem
   }
 
   node micro

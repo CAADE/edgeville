@@ -1,8 +1,7 @@
-.. _Scenario-Run-Analytics-on-the-Edge-:
+.. _Scenario-Run-Analytics-on-the-Edge:
 
 Run Analytics on the Edge
-
-==========================
+=========================
 
 Run Analytics on the Edge
  using CLI and Web Interface with ... <parameters>

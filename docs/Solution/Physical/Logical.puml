@@ -1,0 +1,20 @@
+@startuml
+
+rectangle "Data Center" as DC #lightblue {
+}
+rectangle "Aggregated Edge Device" as AED #lightgreen {
+}
+rectangle "Edge Device" as ED #lightyellow {
+}
+rectangle "End Point" as EP #lightgray
+rectangle "IOT Gateway" as IG #lightgray
+
+DC "1" --> "n" AED
+DC "1" --> "n" ED
+ED "1" --> "n" EP
+AED "1" --> "n" EP
+AED "1" --> "n" ED
+ED "1" --> "n" IG
+AED "1" --> "n" IG
+IG "1" --> "n" EP
+@enduml

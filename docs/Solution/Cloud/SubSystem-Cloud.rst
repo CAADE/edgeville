@@ -38,14 +38,23 @@ Interface
 * REST-API -
 * Portal - Web Portal
 
+Cloud Relationships
+-------------------
+This diagram shows the relationships between the clouds. It is important to note the differences between the Cloud
+and the Multi-Cloud. The key differentiator is the fact the the Multi-Cloud orchestrates Services not infrastructure
+like the Cloud does. Also not that the Multi-Cloud can manage 1 to many Clouds. By submitting requests to the Cloud.
+
+.. image:: CloudRelationships.png
+
 Logical Artifacts
 -----------------
 
-The Logical Artifacts of the Cloud layer are the different kinds of Clouds.
+The Logical Artifacts of the Cloud layer are the different kinds of Clouds. A common interface to managing the clouds
+and multi-Cloud should be used.
 
-* :ref:`SubSystem-Common-Cloud-Core`
-* :ref:`SubSystem-SDI`
-* :ref:`SubSystem-uSDI`
+* :ref:`SubSystem-Common-Cloud-Core` - Multi-Cloud functionality
+* :ref:`SubSystem-SDI` - Interface to the typical private and public cloud functionality
+* :ref:`SubSystem-uSDI` - Interface to the micro cloud interface.
 
 .. image:: Logical.png
 
@@ -79,5 +88,7 @@ forwarded to micro-services through the REST interface of each micro-service.
 
 Micro-Services
 --------------
+
+There is one general microservice that is being used to create the cloud layer.
 
 * :ref:`Service-cloud`

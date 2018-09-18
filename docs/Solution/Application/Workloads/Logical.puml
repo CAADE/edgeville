@@ -1,0 +1,36 @@
+@startuml
+
+hide member
+
+package "Analytics" as User #lightgreen {
+
+}
+
+package "Services" as Used #lightgreen {
+
+}
+
+package "Application/Workloads" #lightblue {
+
+    interface "Application/Workloads" {
+    }
+
+    CLI ()-- "Application/Workloads"
+    REST ()-- "Application/Workloads"
+    Web ()-- "Application/Workloads"
+
+    abstract "Workload" as W
+    class "Event\nDriven\nWorkload" as EDW
+    class "Procedural\nDriven\nWorkload" as PDW
+    class "Workload\nAutomation" as WA
+
+    W <|-- EDW
+    W <|-- PDW
+
+   WA "1" *--> "n" W
+}
+
+User --> "Application/Workloads"
+"Application/Workloads" -> Used
+
+@enduml

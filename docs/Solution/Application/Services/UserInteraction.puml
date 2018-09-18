@@ -1,0 +1,8 @@
+@startuml
+actor User
+
+User -> "Application/Services": UseCase
+"Application/Services" -> bin: bin-name()
+bin -> sailsjs: bin/name()
+
+@enduml

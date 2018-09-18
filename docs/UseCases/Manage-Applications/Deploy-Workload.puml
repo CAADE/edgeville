@@ -1,0 +1,14 @@
+@startuml
+Actor "actorName" as A
+
+box "Manage-Applications" #lightblue
+participant CLI as CLI
+participant Web as Web
+participant "Edgeville" as S
+A -> CLI : Edgeville-workload-deploy()
+CLI -> S : workload/deploy()
+A -> Web : workload/deploy()
+Web -> S : workload/deploy()
+end box
+
+@enduml

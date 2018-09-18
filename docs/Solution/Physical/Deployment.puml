@@ -1,0 +1,80 @@
+@startuml
+
+package  "Physical"  #lightgray {
+
+  queue "Telemetry Bus" as TB
+  node "Edge Device" as ED #lightblue {
+    cloud "micro-Cloud" as mc #white {
+        rectangle Compute #orange {
+          entity "Servers"
+        }
+        rectangle Storage #plum {
+          database Drives
+        }
+        rectangle Network #lightgreen {
+            node "uCPE"
+        }
+    }
+    control "edgeville-agent" as ea
+    control "Telemetry Producer" as TP
+    ea --> mc
+    TP --> TB
+  }
+  node "Aggregated Edge Device" as AED #lightblue {
+    cloud "micro-Cloud" as aedmc #white {
+        rectangle Compute as AEDC #orange {
+          entity "Servers" as AEDCS
+        }
+        rectangle Storage as AES #plum {
+          database Drives as AEDSD
+        }
+        rectangle Network as AEDN #lightgreen {
+            node "uCPE" as AEDNu
+        }
+    }
+    control "edgeville-manager" as EM
+    control "edgeville-agent" as EA
+    control "Telemetry Aggregator" as TA
+    TB <--> TA
+  }
+
+  node "Data Center" as DC #lightblue {
+    cloud "private-Cloud" as pc #white {
+        rectangle Compute as DCC #orange {
+          entity "Servers"  as DCCS
+        }
+        rectangle Storage as DCDS #plum {
+            database Drive
+        }
+        rectangle Network as DCDN #lightgreen {
+            node "network" as DCDNu
+        }
+    }
+    control "edgeville-manager" as DCEM
+    control "Telemetry Consumer" as DCTC
+
+    cloud "Multi-Cloud" as MC #white {
+      control "Service Orchestrator"
+      control "Cloud Broker"
+      control "Secure Overlay Network"
+      control "Data Coordinator"
+
+    }
+
+  }
+
+  MC ..> aedmc
+  MC ..> pc
+  MC ..> mc
+
+  DCEM --> EA
+  DCEM --> ea
+  DCTC <-- TB
+
+  ea --> EM
+  EM -> EA
+  EA -> aedmc
+
+}
+
+@enduml

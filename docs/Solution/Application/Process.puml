@@ -1,0 +1,51 @@
+@startuml
+
+partition "Application" {
+
+}
+
+partition "Application\nDeveloper"  #cccccc {
+  (*) --> "Create Workload"
+  (*) --> "Create Application"
+  (*) --> "Create Service"
+}
+
+partition "Workload" #yellow {
+  "Create Workload" --> "Deploy Workload"
+  "Deploy Workload" --> "Monitor Workload"
+  "Deploy Workload" --> "Update Workload"
+}
+
+partition "Application" #plum {
+  "Create Application" --> "Deploy Application"
+  "Deploy Workload" --> "Deploy Application"
+  "Deploy Application" --> "Update Application"
+  "Deploy Application" --> "Monitor Application"
+  "Update Workload" --> "Update Application"
+}
+
+partition "Service" #lightgreen {
+  "Deploy Application" --> "Deploy Service"
+  "Create Service" --> "Deploy Service"
+  "Deploy Service" --> "Update Service"
+  "Deploy Service" --> "Monitor Service"
+  "Update Application" --> "Update Service"
+}
+
+partition "Model" #pink {
+  "Deploy Application" --> "Deploy Model"
+  "Update Application" --> "Deploy Model"
+  "Update Application" --> "Update Model"
+  "Deploy Model" --> "Update Model"
+}
+
+partition Cloud #cccccc {
+  "Monitor Service" -> "Telemetry Consumer"
+  "Monitor Application" -> "Telemetry Consumer"
+  "Deploy Service" --> "Orchestrate Service"
+  "Update Service" --> "Orchestrate Service"
+  "Deploy Model" --> "Update Data"
+  "Update Model" --> "Update Data"
+}
+
+@enduml

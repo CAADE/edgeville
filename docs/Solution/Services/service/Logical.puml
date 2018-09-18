@@ -1,0 +1,13 @@
+@startuml
+
+package "service" #lightblue {
+    interface "service" {
+
+    }
+    CLI ()-- "service" : 5000
+    REST ()-- "service" : 3000
+    Web ()-- "service" : 80
+}
+
+
+@enduml

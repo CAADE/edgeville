@@ -1,0 +1,32 @@
+@startuml
+
+package "User" #ffffcc {
+
+}
+
+package "Used" #ffffcc {
+
+}
+
+package "Telemetry" #lightblue {
+
+    interface "Telemetry" {
+    }
+
+    CLI ()-- "Telemetry"
+    REST ()-- "Telemetry"
+    Web ()-- "Telemetry"
+
+    class "Telelmetry\nProducer" as TP
+    class "Telelmetry\nBus" as TB
+    class "Telelmetry\nSubscriber" as TS
+    class "Telelmetry\nAggregator" as TA
+    TB -- TP
+    TB -- TS
+    TP <|-- TA
+    TS <|-- TA
+}
+
+User --> "Telemetry"
+"Telemetry" --> Used
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+
+package "workload" #lightblue {
+    interface "workload" {
+
+    }
+    CLI ()-- "workload" : 5000
+    REST ()-- "workload" : 3000
+    Web ()-- "workload" : 80
+}
+
+
+@enduml

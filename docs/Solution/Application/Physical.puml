@@ -1,0 +1,40 @@
+@startuml
+
+package "Application" #lightblue {
+  interface CLI
+  interface Web
+  interface REST
+  folder bin #ffffff {
+    component app
+    component workload
+    component service
+  }
+
+  folder appName #ffffff {
+    component sails.io
+    component sailsjs
+  }
+
+  folder uService1 #ffffff {
+    component service as uService
+    component workload as uWorkload
+    component app as uApp
+  }
+}
+
+CLI -- app
+CLI -- workload
+CLI -- service
+app --  REST
+workload --  REST
+service --  REST
+
+Web -- sailsjs
+Web -- REST
+REST -- sailsjs
+Web -- sails.io
+REST -- uService
+REST -- uWorkload
+REST -- uApp
+
+@enduml

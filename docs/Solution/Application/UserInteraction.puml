@@ -1,0 +1,42 @@
+@startuml
+actor "Application\nDeveloper" as User
+
+User -> "Application\nLayer": Deploy Application
+"Application\nLayer" -> bin: app-deploy()
+bin -> sailsjs: app/deploy()
+sailsjs -> sailsjs: service/deploy()
+sailsjs -> sailsjs: app/monitor()
+sailsjs -> sailsjs: service/monitor()
+
+User -> "Application\nLayer": Update Application
+"Application\nLayer" -> bin: update-deploy()
+bin -> sailsjs: app/update()
+sailsjs -> sailsjs: service/deploy()
+sailsjs -> sailsjs: service/update()
+
+User -> "Application\nLayer": Deploy Workload
+"Application\nLayer" -> bin: workload-deploy()
+bin -> sailsjs: workload/deploy()
+sailsjs -> sailsjs: app/deploy()
+sailsjs -> sailsjs: service/deploy()
+sailsjs -> sailsjs: app/monitor()
+sailsjs -> sailsjs: service/monitor()
+
+User -> "Application\nLayer": Update Workload
+"Application\nLayer" -> bin: workload-update()
+bin -> sailsjs: workload/update()
+sailsjs -> sailsjs: app/deploy()
+sailsjs -> sailsjs: app/update()
+sailsjs -> sailsjs: service/deploy()
+sailsjs -> sailsjs: service/update()
+
+User -> "Application\nLayer": Deploy Service
+"Application\nLayer" -> bin: service-deploy()
+bin -> sailsjs: service/deploy()
+sailsjs -> sailsjs: service/monitor()
+
+User -> "Application\nLayer": Update Service
+"Application\nLayer" -> bin: service-update()
+bin -> sailsjs: service/update()
+
+@enduml

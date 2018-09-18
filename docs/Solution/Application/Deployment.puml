@@ -1,0 +1,29 @@
+@startuml
+
+package  "Application"  #lightblue {
+  folder bin #ffffff {
+    file app
+    file service
+    file workload
+  }
+
+  folder Services #ffffff {
+    file app as uApp
+    file service as uService
+    file workload as uWorkload
+  }
+
+  node micro
+
+  node sailsjs
+  database DB1
+
+  sailsjs -- DB1
+  bin .. sailsjs
+  Services .. micro
+
+  micro -- DB1
+  sailsjs -> micro
+}
+
+@enduml

@@ -42,6 +42,16 @@ High Level Concepts
 
 .. image:: HighLevel.png
 
+Layered Architecture
+--------------------
+
+**Application Layer** - Applications are developed to run across the ecosystem.
+**Cloud Layer** - Cloud Layer includes Multi-Cloud, Cloud and Micro-Clouds
+**Control Layer** - Control Layer includes Security Telemetry and Data Control subsystems
+**Physical Layer** - Physical hardware includes Data Center, Edge Devices, and Devices
+
+.. image:: Architecture.png
+
 Topologies
 ----------
 The architecture is divided into Control and Cloud. The Control layer establishes a topology for controlling the phsyical edge devices, data centers, and IOT Gateways.
@@ -72,5 +82,5 @@ how these components work together to fulfill the high level use cases.
 * :ref:`SubSystem-Security` - contains all of the Subsystems for the security of the edge and data centers: :ref:`SubSystem-Security/Encryption`, :ref:`SubSystem-Security/Identity-Manager`, :ref:`SubSystem-Security/Trust-Manager`
 * :ref:`SubSystem-Telemetry` - contains all of Telemety Bus from multiple clouds, services and application stacks: :ref:`SubSystem-Telemetry/Telemetry-Aggregator`, :ref:`Subsystem-Telemetry/Telemetry-Bus`,  :ref:`Subsystem-Telemetry/Telemetry-Producer`,  :ref:`Subsystem-Telemetry/Telemetry-Subscriber`
 
-.. image:: Solution/HighLevelLogical.png
+.. image:: HighLevelLogical.png
 

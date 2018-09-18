@@ -1,0 +1,30 @@
+@startuml
+
+
+abstract class Cloud {
+  infrastructure orchestration
+  storage
+  network
+  compute
+  security
+}
+
+class MultiCloud  {
+  service orchestration
+  registry
+  provisioning
+  data coordination
+  cloud broker
+  secure overlay network
+}
+
+MultiCloud "1" o--> "n" Cloud
+Cloud <|-- MicroCloud
+Cloud <|-- PrivateCloud
+
+SDI ()- Cloud
+SDI ()- PrivateCloud
+uSDI ()- MicroCloud
+C3 ()- MultiCloud
+
+@enduml

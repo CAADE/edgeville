@@ -1,0 +1,16 @@
+@startuml
+
+Actor "actorName" as A
+
+box "Manage-Cloud" #lightblue
+    participant CLI as CLI
+    participant Web as Web
+    participant "Edgeville" as S
+    A -> CLI : Edgeville-c3-monitor()
+    CLI -> S : c3/monitor()
+    A -> Web : c3/monitor()
+    Web -> S : c3/monitor()
+end box
+
+@enduml
+

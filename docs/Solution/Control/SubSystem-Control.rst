@@ -46,9 +46,11 @@ Interface
 Logical Artifacts
 -----------------
 
-* :ref:`SubSystem-Data-Coordinator`
-* :ref:`SubSystem-Edgeville-Agent`
-* :ref:`SubSystem-Edgeville-Manager`
+* :ref:`SubSystem-Control/Data-Coordinator`
+* :ref:`SubSystem-Control/Edgeville-Agent`
+* :ref:`SubSystem-Control/Edgeville-Manager`
+* :ref:`SubSystem-Control/Security`
+* :ref:`SubSystem-Control/Telemetry`
 
 .. image:: Logical.png
 

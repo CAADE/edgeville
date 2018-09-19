@@ -8,7 +8,7 @@ Manage Applications
 Actors
 ------
 
-* :ref:`Actor-User`
+* :ref:`Actor-Operations-Manager`
 
 Activities
 ----------
@@ -20,7 +20,8 @@ Activities
 Systems Involved
 ----------------
 
-* :ref:`SubSystem-System`
+* :ref:`SubSystem-Application`
+* :ref:`SubSystem-Control`
 
 
 Detail Scenarios

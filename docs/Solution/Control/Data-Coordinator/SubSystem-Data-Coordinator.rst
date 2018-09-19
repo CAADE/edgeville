@@ -15,14 +15,14 @@ Use Cases
 Users
 -----
 
-* :ref:`Actor-User`
+* :ref:`Actor-Operations-Manager`
 
 .. image:: UserInteraction.png
 
 Uses
 ----
 
-* :ref:`SubSystem-Control-Layer/Data-Coordinator`
+* :ref:`SubSystem-Control/Data-Coordinator`
 
 Interface
 ---------
@@ -69,4 +69,4 @@ forwarded to micro-services through the REST interface of each micro-service.
 Micro-Services
 --------------
 
-* :ref:`Service-service-name`
+* :ref:`Service-cloud`

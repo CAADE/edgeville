@@ -8,7 +8,7 @@ Manage Infrastructure
 Actors
 ------
 
-* :ref:`Actor-User`
+* :ref:`Actor-Operations-Manager`
 
 Activities
 ----------
@@ -20,7 +20,8 @@ Activities
 Systems Involved
 ----------------
 
-* :ref:`SubSystem-System`
+* :ref:`SubSystem-Control`
+* :ref:`SubSystem-Cloud`
 
 
 Detail Scenarios

@@ -1,0 +1,14 @@
+@startuml
+Actor "actorName" as A
+
+box "Manage-Applications" #lightblue
+participant CLI as CLI
+participant Web as Web
+participant "Edgeville" as S
+A -> CLI : Edgeville-model-update()
+CLI -> S : model/update()
+A -> Web : model/update()
+Web -> S : model/update()
+end box
+
+@enduml

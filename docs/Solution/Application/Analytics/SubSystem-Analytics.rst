@@ -77,4 +77,4 @@ forwarded to micro-services through the REST interface of each micro-service.
 Micro-Services
 --------------
 
-* :ref:`Service-service-name`
+*

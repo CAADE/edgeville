@@ -1,0 +1,14 @@
+@startuml
+Actor "actorName" as A
+
+box "Manage-Infrastructure" #lightblue
+participant CLI as CLI
+participant Web as Web
+participant "Edgeville" as S
+A -> CLI : Edgeville-edge-update()
+CLI -> S : edge/update()
+A -> Web : edge/update()
+Web -> S : edge/update()
+end box
+
+@enduml

@@ -52,9 +52,9 @@ Logical Artifacts
 The Logical Artifacts of the Cloud layer are the different kinds of Clouds. A common interface to managing the clouds
 and multi-Cloud should be used.
 
-* :ref:`SubSystem-Common-Cloud-Core` - Multi-Cloud functionality
-* :ref:`SubSystem-SDI` - Interface to the typical private and public cloud functionality
-* :ref:`SubSystem-uSDI` - Interface to the micro cloud interface.
+* :ref:`SubSystem-Cloud/Common-Cloud-Core` - Multi-Cloud functionality
+* :ref:`SubSystem-Cloud/SDI` - Interface to the typical private and public cloud functionality
+* :ref:`SubSystem-Cloud/uSDI` - Interface to the micro cloud interface.
 
 .. image:: Logical.png
 

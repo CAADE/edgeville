@@ -4,6 +4,8 @@
     rectangle Analytics #white
     rectangle Services #white
     rectangle Workloads #white
+    Analytics -> Workloads
+    Workloads -> Services
   }
   rectangle "Cloud Layer" as ClL #orange {
     rectangle "Multi Cloud" as MC #white
@@ -16,15 +18,19 @@
   rectangle "Control Layer" as CL #lightgreen {
     rectangle Security #white
     rectangle Telemetry #white
-    rectangle "Data Coordination" #white
+    rectangle "Data Coordination" as CLDC #white
+    Security . Telemetry
 
   }
   rectangle "Physical Layer" as PL #lightgray {
-    rectangle Device #white
+    rectangle "IOT Gateway" as IG #white
+    rectangle "End Point" as Device #white
     rectangle "Edge Device" as ED #white
     rectangle "Aggregated Edge Device" as AED #white
     rectangle "Data Center" as DC #white
-
+    IG -> Device
+    AED --> IG
+    ED --> IG
     ED "1" -> "n" Device
     AED "1" -> "n" ED
     AED "1" --> "n" Device

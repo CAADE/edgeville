@@ -78,17 +78,23 @@ The Edgeville Architecture contains several subsystems and components. The follo
 how these components work together to fulfill the high level use cases.
 
 * :ref:`SubSystem-Application` - contains all of the Subsystems for the application layer:
+
   * :ref:`SubSystem-Application/Analytics` - Generalized Analytics workload
   * :ref:`SubSystem-Application/Services` - Services that provide capabilities to all applications and workloads.
   * :ref:`SubSystem-Application/Workloads` - Workload connects applications, and services together.
+
 * :ref:`SubSystem-Cloud` - contains all of the Subsystems for the cloud:
+
   * :ref:`SubSystem-Cloud/SDI` - Interface for Private and Public Clouds.
   * :ref:`SubSystem-Cloud/uSDI` - Interface to micro-Clouds
   * :ref:`SubSystem-Cloud/Common-Cloud-Core` - Interface to Hybrid/Multi Cloud.
+
 * :ref:`SubSystem-Control` - contains all of the Subsystems for the control of the edge devices:
+
   * :ref:`SubSystem-Control/Data-Coordinator` - Coordinates data between the different devices.
   * :ref:`SubSystem-Control/Edgeville-Agent` - process running on the Edge Device and Aggregated Edge Device to manage control of the device.
   * :ref:`SubSystem-Control/Edgeville-Manager`- process running on the Data Center and Aggregated Edge Device to manage control of its children devices.
+
 * :ref:`SubSystem-Physical` - contains all of the physical devices in the system.
 
 .. image:: Solution/HighLevelLogical.png

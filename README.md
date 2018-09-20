@@ -1,27 +1,44 @@
 # Edgeville
 
-a [Sails v1](https://sailsjs.com) application
+Edgeville is a Conceptual Architecture for Edge to Data Center Computer and Analytics.
+This does not include the end point devices like sensors, cameras, etc... but includes all
+of the infrastructure and control for the aggregation of compute,storage and network across
+the complete ecocsystem. 
 
+![image](docs/HighLevel.png)
 
-### Links
+## Conceptual Architecture
+
+The design uses [plantuml](http://plantuml.com/) and [rst](http://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html)
+to document the architecture.
+
+Plantuml is a text based language that lets you describe UML diagrams. 
+All of the plantuml graphic files are shown in the *.rst (ReStructure Text) files.
+The document can be built using the building the plantuml and rst files into png and html files respectively.
+To generate the graphic files (*.png) for the plantuml files (*.puml) do the following:
+```
+# npm run build-doc
+```
+
+Note that the build process uses docker images to perform a sphynix build to build the documentation.
+
+### Documentation layout
+
+The documentation for the architecture can be found in the **docs** directory.
+The directory is layout as follows:
+* **Actors** - documentation of the actors of the system
+* **Solution** - Sub systems and solution of the system
+* **UseCases** - List of Use Cases of the system.
+* **Home.rst** - Main page in the documentation
+* **index.rst** - index of the complete documentation. (uses the rst/sphynix format)
+
+## Implementations
+
+An implementation of the reference architecture is written using [sailsjs](http://sailsjs.org/) a nodejs MVC framework.
+In addition to the bouquet pattern generator.
 
 + [Get started](https://sailsjs.com/get-started)
 + [Sails framework documentation](https://sailsjs.com/documentation)
-+ [Version notes / upgrading](https://sailsjs.com/documentation/upgrading)
-+ [Deployment tips](https://sailsjs.com/documentation/concepts/deployment)
-+ [Community support options](https://sailsjs.com/support)
-+ [Professional / enterprise options](https://sailsjs.com/enterprise)
+* [Bouquet Pattern Generator](http://bouquet.readthedocs.io)
 
-
-### Version info
-
-This app was originally generated on Wed Aug 08 2018 09:08:59 GMT-0700 (Pacific Daylight Time) using Sails v1.0.0-46.
-
-<!-- Internally, Sails used [`sails-generate@1.15.5`](https://github.com/balderdashy/sails-generate/tree/v1.15.5/lib/core-generators/new). -->
-
-
-
-<!--
-Note:  Generators are usually run using the globally-installed `sails` CLI (command-line interface).  This CLI version is _environment-specific_ rather than app-specific, thus over time, as a project's dependencies are upgraded or the project is worked on by different developers on different computers using different versions of Node.js, the Sails dependency in its package.json file may differ from the globally-installed Sails CLI release it was originally generated with.  (Be sure to always check out the relevant [upgrading guides](https://sailsjs.com/upgrading) before upgrading the version of Sails used by your app.  If you're stuck, [get help here](https://sailsjs.com/support).)
--->
 

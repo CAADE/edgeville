@@ -14,7 +14,7 @@ package Edgeville #lightgray {
       rectangle "Edgeville Agent" as EA
       rectangle "Telemetry" as Telemetry
       rectangle "Security" as Security
-      EM --> "n" EA
+      EM "1" *--> "n" EA
       EM --> DC
       EM -> Telemetry
       EA -> Telemetry
@@ -37,14 +37,14 @@ package Edgeville #lightgray {
       rectangle "Edge Device" as ED
       rectangle "End Point" as EP
       rectangle "IOT Gateway" as IG
-      PLDC -> AED
-      PLDC --> ED
-      AED -> ED
-      AED --> IG
-      AED --> EP
-      ED -> IG
-      IG -> EP
-      ED --> EP
+      PLDC "1" *-> "n" AED
+      PLDC "1" *--> "n" ED
+      AED "1" *-> "n" ED
+      AED "1" *--> "n" IG
+      AED "1" *--> "n" EP
+      ED "1" *-> "n" IG
+      IG "1" *-> "n" EP
+      ED "1" *--> "n" EP
     }
 
     AL ----> Cloud : runs on

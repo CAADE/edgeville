@@ -1,8 +1,10 @@
 @startuml
+rectangle "Diagram TBD"
+@enduml
 actor User
 
 User -> "Cloud/SDI": UseCase
 "Cloud/SDI" -> bin: bin-name()
 bin -> sailsjs: bin/name()
 
-@enduml
+

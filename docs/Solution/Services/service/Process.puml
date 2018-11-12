@@ -1,4 +1,6 @@
 @startuml
+rectangle "Diagram TBD"
+@enduml
 
 partition "service" {
 
@@ -17,4 +19,4 @@ partition "service" #lightblue {
 
 partition Used  #cccccc {
 }
-@enduml
+

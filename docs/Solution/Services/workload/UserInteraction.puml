@@ -1,6 +1,8 @@
 @startuml
+rectangle "Diagram TBD"
+@enduml
 actor User
 
 User -> "workload": UseCase
 
-@enduml
+

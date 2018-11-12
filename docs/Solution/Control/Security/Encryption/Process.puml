@@ -1,4 +1,6 @@
 @startuml
+rectangle "Diagram TBD"
+@enduml
 
 partition "Security Layer/Encryption" {
 
@@ -19,4 +21,4 @@ partition Used #cccccc {
   "Test Code" --> "Do Something"
 }
 
-@enduml
+

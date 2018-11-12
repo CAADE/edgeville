@@ -1,4 +1,6 @@
 @startuml
+rectangle "Diagram TBD"
+@enduml
 
 package "User" #ffffcc {
 
@@ -29,4 +31,4 @@ package "Telemetry" #lightblue {
 
 User --> "Telemetry"
 "Telemetry" --> Used
-@enduml
+

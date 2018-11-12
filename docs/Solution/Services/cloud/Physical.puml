@@ -1,4 +1,6 @@
 @startuml
+rectangle "Diagram TBD"
+@enduml
 
 interface external
 
@@ -8,4 +10,4 @@ package "cloud" #lightblue {
 }
 external -- service : 3000
 internal - service : 5000
-@enduml
+

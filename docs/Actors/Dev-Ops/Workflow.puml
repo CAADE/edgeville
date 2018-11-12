@@ -1,4 +1,6 @@
 @startuml
+rectangle "Diagram TBD"
+@enduml
 |Dev Ops|
 start
 |#ffffaa|Edgeville|
@@ -17,4 +19,4 @@ fork end
 :Launch an Application in an environment;
 :Kill Application and Services;
 stop
-@enduml
+

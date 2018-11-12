@@ -1,4 +1,6 @@
 @startuml
+rectangle "Diagram TBD"
+@enduml
 
 package  "Telemetry"  #lightblue {
   folder bin #ffffff {
@@ -22,4 +24,4 @@ package  "Telemetry"  #lightblue {
   sailsjs -> micro
 }
 
-@enduml
+

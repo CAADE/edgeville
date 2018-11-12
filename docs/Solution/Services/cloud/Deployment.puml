@@ -1,4 +1,6 @@
 @startuml
+rectangle "Diagram TBD"
+@enduml
 
 interface external
 control trigger
@@ -18,4 +20,4 @@ condition: always
 scale: thru-put
 cardinality: 1
 end note
-@enduml
+

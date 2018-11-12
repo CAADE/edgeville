@@ -1,8 +1,10 @@
 @startuml
+rectangle "Diagram TBD"
+@enduml
 actor User
 
 User -> "Telemetry/Telemetry Producer": UseCase
 "Telemetry/Telemetry Producer" -> bin: bin-name()
 bin -> sailsjs: bin/name()
 
-@enduml
+

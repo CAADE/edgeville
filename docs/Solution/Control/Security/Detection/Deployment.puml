@@ -1,4 +1,6 @@
 @startuml
+rectangle "Diagram TBD"
+@enduml
 
 package  "Security/Detection"  #lightblue {
   folder bin #ffffff {
@@ -22,4 +24,4 @@ package  "Security/Detection"  #lightblue {
   sailsjs -> micro
 }
 
-@enduml
+

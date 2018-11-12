@@ -1,8 +1,10 @@
 @startuml
+rectangle "Diagram TBD"
+@enduml
 actor User
 
 User -> "Security Layer/Identity Manager": UseCase
 "Security Layer/Identity Manager" -> bin: bin-name()
 bin -> sailsjs: bin/name()
 
-@enduml
+

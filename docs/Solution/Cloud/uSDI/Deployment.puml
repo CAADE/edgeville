@@ -1,4 +1,6 @@
 @startuml
+rectangle "Diagram TBD"
+@enduml
 
 package  "Cloud/uSDI"  #lightblue {
   folder bin #ffffff {
@@ -22,4 +24,4 @@ package  "Cloud/uSDI"  #lightblue {
   sailsjs -> micro
 }
 
-@enduml
+

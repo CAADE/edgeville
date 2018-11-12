@@ -1,4 +1,6 @@
 @startuml
+rectangle "Diagram TBD"
+@enduml
 
 package "workload" #lightblue {
     interface "workload" {
@@ -10,4 +12,4 @@ package "workload" #lightblue {
 }
 
 
-@enduml
+

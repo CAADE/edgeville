@@ -16,11 +16,16 @@ package "Security" #lightblue {
     CLI ()-- "Security"
     REST ()-- "Security"
     Web ()-- "Security"
-    class Detection
-    class Encryption
-    class "Identity Manager"
-    class "Remediation"
-    class "Trust Manager"
+    package Detection {
+    }
+    package Encryption {
+    }
+    package "Identity Manager" {
+    }
+    package "Remediation" {
+    }
+    package "Trust Manager" {
+    }
 }
 
 User --> "Security"

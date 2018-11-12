@@ -1,4 +1,6 @@
 @startuml
+rectangle "Diagram TBD"
+@enduml
 
 package "Control/Data Coordinator/Meta Data Management" #lightblue {
   interface CLI
@@ -27,4 +29,4 @@ REST -- sailsjs
 Web -- sails.io
 REST -- micro
 
-@enduml
+

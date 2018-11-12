@@ -1,4 +1,6 @@
 @startuml
+rectangle "Diagram TBD"
+@enduml
 
 package  "Security Layer/Encryption"  #lightblue {
   folder bin #ffffff {
@@ -22,4 +24,4 @@ package  "Security Layer/Encryption"  #lightblue {
   sailsjs -> micro
 }
 
-@enduml
+

@@ -1,8 +1,10 @@
 @startuml
+rectangle "Diagram TBD"
+@enduml
 actor User
 
 User -> "Control Layer/Edgeville Agent": UseCase
 "Control Layer/Edgeville Agent" -> bin: bin-name()
 bin -> sailsjs: bin/name()
 
-@enduml
+

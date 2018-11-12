@@ -1,6 +1,6 @@
 @startuml
 
-partition "Application/Analytics" {
+partition "Control/Data Coordinator/Meta Data Management" {
 
 }
 
@@ -9,7 +9,7 @@ partition User  #cccccc {
   --> "Write Code"
 }
 
-partition "Application/Analytics" #lightblue {
+partition "Control/Data Coordinator/Meta Data Management" #lightblue {
   "Write Code" --> "Test Code"
   "Test Code" --> "Deploy Code"
   "Deploy Code" --> (*)

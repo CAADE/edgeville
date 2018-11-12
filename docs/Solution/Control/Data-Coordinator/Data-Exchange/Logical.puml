@@ -1,0 +1,24 @@
+@startuml
+
+package "User" #ffffcc {
+
+}
+
+package "Used" #ffffcc {
+
+}
+
+package "Control/Data Coordinator/Data Exchange" #lightblue {
+
+    interface "Control/Data Coordinator/Data Exchange" {
+    }
+
+    CLI ()-- "Control/Data Coordinator/Data Exchange"
+    REST ()-- "Control/Data Coordinator/Data Exchange"
+    Web ()-- "Control/Data Coordinator/Data Exchange"
+}
+
+User --> "Control/Data Coordinator/Data Exchange"
+"Control/Data Coordinator/Data Exchange" --> Used
+
+@enduml

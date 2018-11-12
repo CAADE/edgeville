@@ -1,24 +1,40 @@
 @startuml
 
-package "User" #ffffcc {
+package "Cloud" as User #ffffcc {
 
 }
 
-package "Used" #ffffcc {
+package "Physical Layer" as Used #ffffcc {
 
 }
 
-package "Control Layer/Data Coordinator" #lightblue {
+package "Data Coordinator" #lightblue {
 
-    interface "Control Layer/Data Coordinator" {
+    interface "Data Coordinator" as DC {
     }
 
-    CLI ()-- "Control Layer/Data Coordinator"
-    REST ()-- "Control Layer/Data Coordinator"
-    Web ()-- "Control Layer/Data Coordinator"
+    CLI ()-- DC
+    REST ()-- DC
+    Web ()-- DC
+    package "Data Exchange" as DE #white {
+    }
+    package "Data Movement" as DM #white {
+    }
+    package "Application Movement" as AM #white {
+    }
+    package "Meta-Data Management" as MDM #white {
+    }
+    DC --> DE
+    DC --> DM
+    DC --> AM
+    DC --> MDM
+
 }
 
-User --> "Control Layer/Data Coordinator"
-"Control Layer/Data Coordinator" --> Used
+User --> DC
+DE --> Used
+DM --> Used
+AM --> Used
+MDM --> Used
 
 @enduml

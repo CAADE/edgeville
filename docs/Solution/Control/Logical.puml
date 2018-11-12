@@ -12,11 +12,40 @@ package "Control" as C #lightgray {
     interface "Control"
     package "Edgeville Agent" as EA { }
     package "Edgeville Manager" as EM { }
-    package "Data Coordinator" as DC #lightblue { }
+    package "Data Coordinator" as DC #lightblue {
+      rectangle "Data Exchange" as DE #white {
+      }
+      rectangle "Data Movement" as DM #white {
+      }
+      rectangle "Application Movement" as AM #white {
+      }
+      rectangle "Meta-data Management" as MDM #white {
+      }
+    }
     package "Security" as S  #lightgreen {
-
+      rectangle Detection #white {
+      }
+      rectangle Ecryption #white {
+      }
+      rectangle Identity #white {
+      }
+      rectangle Remediation #white {
+      }
+      rectangle Trust #white {
+      }
     }
     package "Telemetry" as T #plum {
+      rectangle Aggregator #white {
+      }
+      rectangle Producer #white {
+      }
+      rectangle Bus #white {
+      }
+      rectangle Subscriber #white {
+      }
+      Producer --> Bus
+      Subscriber --> Bus
+      Aggregator <--> Bus
     }
 
     EM --> S

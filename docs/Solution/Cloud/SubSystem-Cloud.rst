@@ -22,6 +22,9 @@ Use Cases
 Users
 -----
 
+The primary user of the Cloud Layer is the :ref:`Actor-Operations-Manager`. They will setup and manage the multi-cloud
+ecosystems, manage topologies of clouds and monitor the cloud operations.
+
 * :ref:`Actor-Operations-Manager`
 
 .. image:: UserInteraction.png
@@ -50,7 +53,7 @@ Logical Artifacts
 -----------------
 
 The Logical Artifacts of the Cloud layer are the different kinds of Clouds. A common interface to managing the clouds
-and multi-Cloud should be used.
+and multi-Cloud should be used. uSDI (mirco-SDI) for microClouds and SDI for all other clouds.
 
 * :ref:`SubSystem-Cloud/Common-Cloud-Core` - Multi-Cloud functionality
 * :ref:`SubSystem-Cloud/SDI` - Interface to the typical private and public cloud functionality
@@ -62,6 +65,9 @@ Activities and Flows
 --------------------
 
 The Cloud layer provides the following activities and flows.
+The :ref:`Actor-Operations-Manager` Creates new multi-clouds using the C3 Architecture. The multi-cloud consists of
+multiple micro-clouds, public clouds and private clouds. The topology of the clouds is established by the
+:ref:`Actor_Operations_Manager`.
 
 .. image::  Process.png
 

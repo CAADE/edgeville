@@ -1,5 +1,6 @@
 @startuml
 
+left to right direction
 
 :Application Developer: as Dev
 :Dev Ops: as DevOps

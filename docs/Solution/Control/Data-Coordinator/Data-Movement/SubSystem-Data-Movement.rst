@@ -1,36 +1,28 @@
-.. _SubSystem-Application/Analytics:
+.. _SubSystem-Control/Data-Coordinator/Data-Movement:
 
-Application/Analytics
-=====================
-Analytics is a layer of the Edgeville Architecture. It shows how the Cloud and Control layer work together
-to provide Analytics and AI on Edge Devices that have the appropriate compute, network and storage capabilities.
-There are several different combinations of where analytics can run in these scenarios. We will cover
-the general scenaros and not all of the permutations.
+Control/Data Coordinator/Data Movement
+======================================
+
+Control/Data Coordinator/Data Movement is a subsystem of Edgeville ...
 
 Use Cases
 ---------
 
-* Analyze Data From Edge
-* Analyze Data In Edge
-* Collect Data
-* Perform Action
-* Perform Action In Edge
-* Generate Report
-* Define Analytics Application
+*
 
 .. image:: UseCases.png
 
 Users
 -----
 
-* :ref:`Actor-Application-Developer`
+* :ref:`Actor-User`
 
 .. image:: UserInteraction.png
 
 Uses
 ----
 
-* :ref:`SubSystem-Application/Analytics`
+* :ref:`SubSystem-Control/Data-Coordinator/Data-Movement`
 
 Interface
 ---------
@@ -49,7 +41,7 @@ Logical Artifacts
 Activities and Flows
 --------------------
 
-The Application/Analytics subsystem provides the following activities and flows.
+The Control/Data Coordinator/Data Movement subsystem provides the following activities and flows.
 
 .. image::  Process.png
 
@@ -67,7 +59,7 @@ micro-services.
 Physical Architecture
 ---------------------
 
-The Application/Analytics subsystem is is physically laid out on a hybrid cloud infrastructure. Each microservice is shown
+The Control/Data Coordinator/Data Movement subsystem is is physically laid out on a hybrid cloud infrastructure. Each microservice is shown
 how they connect to each other. All of the micro-services communicate to each other and the main app through a
 REST interface. A CLI, REST or Web interface for the app is how other subsystems or actors interact. Requests are
 forwarded to micro-services through the REST interface of each micro-service.
@@ -77,4 +69,8 @@ forwarded to micro-services through the REST interface of each micro-service.
 Micro-Services
 --------------
 
-*
+These are the micro-services for the subsystem. The combination of the micro-services help implement
+the subsystem's logic.
+
+* :ref:`Service-service-name`
+

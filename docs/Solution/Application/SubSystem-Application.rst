@@ -3,8 +3,8 @@
 Application
 ===========
 
-Application is a layer of Edgeville Architecture. It consists of Services, Workloads and Analytics. Analytics utilizes
-the Services and workload Sub Systems. Analytics is an example of how to utilize the Services and Workloads to
+Application is a layer of Edgeville Architecture. It consists of Services, and Workloads. Customer applications or use cases use
+the Services and Workload Sub Systems. Analytics is an example of how to utilize the Services and Workloads to
 create new applications.
 
 Use Cases
@@ -38,7 +38,6 @@ Uses
 ----
 
 * :ref:`SubSystem-Cloud`
-* :ref:`SubSystem-Application/Analytics`
 * :ref:`SubSystem-Application/Services`
 * :ref:`SubSystem-Application/Workloads`
 
@@ -52,7 +51,6 @@ Interface
 Logical Artifacts
 -----------------
 
-* :ref:`SubSystem-Application/Analytics`
 * :ref:`SubSystem-Application/Services`
 * :ref:`SubSystem-Application/Workloads`
 

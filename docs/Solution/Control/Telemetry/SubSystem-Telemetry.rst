@@ -1,4 +1,4 @@
-.. _SubSystem-Telemetry:
+.. _SubSystem-Control/Telemetry:
 
 Telemetry
 =========
@@ -22,7 +22,7 @@ Users
 Uses
 ----
 
-* :ref:`SubSystem-Telemetry`
+* :ref:`SubSystem-Control/Telemetry`
 
 Interface
 ---------

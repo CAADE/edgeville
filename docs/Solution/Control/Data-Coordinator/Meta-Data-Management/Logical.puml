@@ -1,0 +1,24 @@
+@startuml
+
+package "User" #ffffcc {
+
+}
+
+package "Used" #ffffcc {
+
+}
+
+package "Control/Data Coordinator/Meta Data Management" #lightblue {
+
+    interface "Control/Data Coordinator/Meta Data Management" {
+    }
+
+    CLI ()-- "Control/Data Coordinator/Meta Data Management"
+    REST ()-- "Control/Data Coordinator/Meta Data Management"
+    Web ()-- "Control/Data Coordinator/Meta Data Management"
+}
+
+User --> "Control/Data Coordinator/Meta Data Management"
+"Control/Data Coordinator/Meta Data Management" --> Used
+
+@enduml

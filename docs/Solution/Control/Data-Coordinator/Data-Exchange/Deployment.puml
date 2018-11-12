@@ -1,6 +1,6 @@
 @startuml
 
-package  "Application/Analytics"  #lightblue {
+package  "Control/Data Coordinator/Data Exchange"  #lightblue {
   folder bin #ffffff {
     file binName
   }

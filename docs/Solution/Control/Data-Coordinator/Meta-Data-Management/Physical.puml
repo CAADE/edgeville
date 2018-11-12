@@ -1,6 +1,6 @@
 @startuml
 
-package "Application/Analytics" #lightblue {
+package "Control/Data Coordinator/Meta Data Management" #lightblue {
   interface CLI
   interface Web
   interface REST

@@ -32,8 +32,8 @@ how these components work together to fulfill the high level use cases.
 
 * :ref:`SubSystem-Cloud` - contains all of the Subsystems for the cloud: :ref:`SubSystem-Cloud/SDI` , :ref:`SubSystem-Cloud/uSDI`, :ref:`SubSystem-Cloud/Common-Cloud-Core` responsible for application and service management.
 * :ref:`SubSystem-Control` - contains all of the Subsystems for the control of the edge devices: :ref:`SubSystem-Control/Data-Coordinator`, :ref:`SubSystem-Control/Edgeville-Agent`, :ref:`SubSystem-Control/Edgeville-Manager`.
-* :ref:`SubSystem-Security` - contains all of the Subsystems for the security of the edge and data centers: :ref:`SubSystem-Security/Encryption`, :ref:`SubSystem-Security/Identity-Manager`, :ref:`SubSystem-Security/Trust-Manager`
-* :ref:`SubSystem-Telemetry` - contains all of Telemety Bus from multiple clouds, services and application stacks: :ref:`SubSystem-Telemetry/Telemetry-Aggregator`, :ref:`Subsystem-Telemetry/Telemetry-Bus`,  :ref:`Subsystem-Telemetry/Telemetry-Producer`,  :ref:`Subsystem-Telemetry/Telemetry-Subscriber`
+* :ref:`SubSystem-Control/Security` - contains all of the Subsystems for the security of the edge and data centers: :ref:`SubSystem-Security/Encryption`, :ref:`SubSystem-Security/Identity-Manager`, :ref:`SubSystem-Security/Trust-Manager`
+* :ref:`SubSystem-Control/Telemetry` - contains all of Telemety Bus from multiple clouds, services and application stacks: :ref:`SubSystem-Telemetry/Telemetry-Aggregator`, :ref:`Subsystem-Telemetry/Telemetry-Bus`,  :ref:`Subsystem-Telemetry/Telemetry-Producer`,  :ref:`Subsystem-Telemetry/Telemetry-Subscriber`
 
 .. image:: HighLevelLogical.png
 
@@ -86,7 +86,7 @@ Process Architecture
 The subsystems of Edgeville request information from each other to accomplish the use cases of the system.
 This diagram shows how these microservices are connected and what they share between each other.
 Creating Trusted edge devices and aggregated edge devices are in important aspect of the architecture.
-As each Edge Device is brought up it follows the Security Chain of Trust protocol described in the :ref:`SubSystem-Security`
+As each Edge Device is brought up it follows the Security Chain of Trust protocol described in the :ref:`SubSystem-Control/Security`
 sub-system. When an Edge Device is attested it notifies its Edgeville Manager (Aggregated Edge Device or Data Center) that it
 is available. When and Edgeville Manager is notified of its children's availability it notifies its parent Edge Manager
 if one exists until the complete ecosystem is brought up.

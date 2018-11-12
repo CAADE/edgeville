@@ -1,0 +1,8 @@
+@startuml
+actor User
+
+User -> "Control/Data Coordinator/Meta Data Management": UseCase
+"Control/Data Coordinator/Meta Data Management" -> bin: bin-name()
+bin -> sailsjs: bin/name()
+
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+actor User
+
+User -> "Control/Data Coordinator/Application Movement": UseCase
+"Control/Data Coordinator/Application Movement" -> bin: bin-name()
+bin -> sailsjs: bin/name()
+
+@enduml

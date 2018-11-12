@@ -22,14 +22,9 @@ package Edgeville #lightgray {
       EA --> Security
     }
     rectangle "Application Layer" as AL #lightblue {
-      rectangle "Analytics" as ALA
-      rectangle "Event Driven Workload" as ALE
-      rectangle "Procedural Driven Workload" as ALP
-      rectangle "Workload Automation" as ALW
-      ALA --> ALP
-      ALA --> ALE
-      ALE --> ALW
-      ALP --> ALW
+      rectangle "Workloads" as ALE
+      rectangle "Services" as ALP
+      ALE -> ALP
     }
     rectangle "Physical Layer" as PL #plum {
       rectangle "Data Center" as PLDC
@@ -48,8 +43,9 @@ package Edgeville #lightgray {
     }
 
     AL ----> Cloud : runs on
-    Cloud ---> Control
-    Control ----> PL
+    AL ----> Control : runs on
+    Control ---> PL
+    Cloud ---> PL
 }
 @enduml
 

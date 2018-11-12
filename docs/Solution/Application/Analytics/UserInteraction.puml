@@ -1,8 +1,0 @@
-@startuml
-actor User
-
-User -> "Application/Analytics": UseCase
-"Application/Analytics" -> bin: bin-name()
-bin -> sailsjs: bin/name()
-
-@enduml

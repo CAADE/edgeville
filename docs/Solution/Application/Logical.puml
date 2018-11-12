@@ -4,21 +4,38 @@ hide member
 
 package "Application" #lightblue {
 
-    interface "Application" {
+    interface "Application" as APPI {
     }
 
-    CLI ()-- "Application"
-    REST ()-- "Application"
-    Web ()-- "Application"
-    package "Workloads" as W {
+    CLI ()-- "APPI"
+    REST ()-- "APPI"
+    Web ()-- "APPI"
+    package "Workloads" as W #ffffff {
+      rectangle "Workload Automation" as WA #lightblue {
+      }
+      rectangle "Event-Driven Workload" as EDW #lightblue {
+      }
+      rectangle "Procedural Workload" as PW #lightblue {
+      }
+      EDW --> WA
+      PW --> WA
     }
-    package Services as S {
+    package Services as S #white {
+      rectangle "Application" as App #lightblue {
+      }
+      rectangle "Complex Service" as CS #lightblue {
+      }
+      rectangle "Service" as Ser #lightblue {
+      }
+      rectangle "AI Model" as AIM #lightblue {
+      }
+      App "1" --> "n" CS
+      App "1" --> "n" AIM
+      CS "1" --> "n" Ser
     }
-    package Analytics as A {
-    }
-    W "1" o--> "n" S
-    A "1" o--> "n" S
-    A "1" *--> "n" W
+    WA "1" o--> "n" App
+    APPI --> W
+    APPI --> S
 }
 
 rectangle "Application\nDeveloper" as Dev #lightgray {
@@ -26,7 +43,7 @@ rectangle "Application\nDeveloper" as Dev #lightgray {
 package "Cloud" as Cloud #lightgreen {
 }
 
-Dev --> "Application"
-"Application" -> "Cloud"
+Dev --> APPI
+APPI -> "Cloud"
 
 @enduml

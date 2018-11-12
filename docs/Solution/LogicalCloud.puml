@@ -6,14 +6,14 @@ package "Common Cloud Core" as HC #pink {
   }
   rectangle "Control" {
   }
-  rectangle "Orchestrator" {
+  rectangle "Service\nOrchestrator" as SO {
   }
-  Portal --> Orchestrator
-  Orchestrator --> Control
-  Orchestrator -> Registry
+  Portal --> SO
+  SO --> Control
+  SO -> Registry
   Registry --> Control
 }
-package "SDI" #lightyellow {
+package "SDI" #lightblue {
   rectangle "Orchestrator" as OSDI {
   }
   rectangle "Storage" as SSDI {

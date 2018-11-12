@@ -1,4 +1,4 @@
-.. _SubSystem-Security:
+.. _SubSystem-Control/Security:
 
 Security
 ========
@@ -26,7 +26,7 @@ Users
 Uses
 ----
 
-* :ref:`SubSystem-Security`
+* :ref:`SubSystem-Control/Security`
 
 Interface
 ---------

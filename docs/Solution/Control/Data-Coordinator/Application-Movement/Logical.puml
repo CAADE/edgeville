@@ -1,0 +1,24 @@
+@startuml
+
+package "User" #ffffcc {
+
+}
+
+package "Used" #ffffcc {
+
+}
+
+package "Control/Data Coordinator/Application Movement" #lightblue {
+
+    interface "Control/Data Coordinator/Application Movement" {
+    }
+
+    CLI ()-- "Control/Data Coordinator/Application Movement"
+    REST ()-- "Control/Data Coordinator/Application Movement"
+    Web ()-- "Control/Data Coordinator/Application Movement"
+}
+
+User --> "Control/Data Coordinator/Application Movement"
+"Control/Data Coordinator/Application Movement" --> Used
+
+@enduml

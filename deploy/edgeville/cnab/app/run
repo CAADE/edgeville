@@ -1,0 +1,30 @@
+#!/bin/sh
+action=$CNAB_ACTION
+name=$CNAB_INSTALLATION_NAME
+env=-$CNAB_ENVIRONMENT
+
+echo "Fire $action"
+
+case $action in
+    install)
+        echo "This is the installation action"
+        docker stack deploy -c docker-compose$env.yaml edgeville$env
+        ;;
+    uninstall)
+        echo "This is the uninstall action"
+        docker stack rm edgeville$env
+        ;;
+    upgrade)
+        echo "Upgrade action"
+        docker stack deploy -c docker-compose$env.yaml edgeville$env
+        ;;
+    status)
+        echo "Status action"
+        docker stack ps edgeville$env
+        ;;
+    *)
+    echo "No action for $action"
+    ;;
+esac
+
+echo "Action $action complete for $name for $env"

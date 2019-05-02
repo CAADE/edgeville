@@ -11,8 +11,8 @@
     rectangle "Multi Cloud" as MC #white
     rectangle Cloud #white
     rectangle "Micro Cloud" as uC #white
-    MC "1" --> "n" Cloud
-    MC "1" --> "n" uC
+    MC "1" -> "n" Cloud
+    MC "1" -left-> "n" uC
 
   }
   rectangle "Control Layer" as CL #lightgreen {
@@ -20,6 +20,7 @@
     rectangle Telemetry #white
     rectangle "Data Coordination" as CLDC #white
     Security . Telemetry
+    CLDC .left. Telemetry
 
   }
   rectangle "Physical Layer" as PL #lightgray {
@@ -39,8 +40,9 @@
 
   }
 
- AL ---> ClL
- ClL ---> CL
- CL ---> PL
+ AL --> ClL
+ AL --> CL
+ ClL --> PL
+ CL --> PL
 
 @enduml

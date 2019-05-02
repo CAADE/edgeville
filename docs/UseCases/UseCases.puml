@@ -8,6 +8,10 @@ left to right direction
 :Operations Manager: as ops
 :Security Engineer: as security
 
+:Edge End Point: as EEP
+:IOT Gateway: as IOTG
+:Service Provider: as SP
+
 rectangle "Edgeville"  #lightBlue {
     (Manage Applications) as MA
     (Manage Cloud) as MC
@@ -22,5 +26,12 @@ network --> MS
 ops --> MI
 ops --> MC
 security --> MS
+MI --> SP
+MC --> SP
+MI --> IOTG
+MI --> EEP
+MS --> IOTG
+MA --> IOTG
+
 
 @enduml
